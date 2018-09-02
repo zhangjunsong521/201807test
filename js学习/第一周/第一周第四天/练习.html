@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #lis{
+            margin-top: 100px;
+        }
+        #lis ul{
+            width: 600px;
+            height: 50px;
+            margin:auto;
+
+        }
+        #lis ul li{box-sizing: border-box;
+            width: 100px;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            border: solid 2px #ccc;
+            float: left;
+            padding-top: 2px;
+        }
+        #cent ul{
+            width: 600px;
+            height: 400px;
+            margin: auto;
+            overflow: hidden;
+        }
+        #cent ul li{
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            font-size: 50px;
+            line-height: 400px;
+            text-align: center;
+            /*border: solid 2px #040404;*/
+            display: none;
+        }
+        #cent ul li.active{
+            display: block;
+        }
+        .active{
+            /*background: #cccccc;*/
+        }
+    </style>
+</head>
+<body>
+
+<div id="lis">
+    <ul>
+        <li class="active">吴彦祖</li>
+        <li>刘德华</li>
+        <li>郭富城</li>
+        <li>周星驰</li>
+        <li>周润发</li>
+        <li>成  龙</li>
+    </ul>
+</div>
+<div id="cent">
+    <ul>
+        <li class="active">帅哥</li>
+        <li>男神</li>
+        <li>有钱</li>
+        <li>搞笑</li>
+        <li>绅士</li>
+        <li>武神</li>
+    </ul>
+</div>
+
+</body>
+</html>
+<script>
+    var lisId =document.getElementById('lis'),
+        lisLi =lisId.getElementsByTagName('li'),
+        centId =document.getElementById('cent'),
+        centLi =centId.getElementsByTagName('li');
+    function click(ht) {
+        for (var i = 0; i < lisLi.length; i++) {
+            lisLi[ht].className='';
+            centLi[ht].className='';
+        }
+    }
+    
+
+
+
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+<div id="div1" myData="13">
+    珠峰培训
+    <span id="span">珠峰</span>
+</div>
+<!--这是一个注释-->
+
+<p>培训</p>
+<h1>珠峰培训2018</h1>
+
+</body>
+</html>
+<script>
+
+    //查看body下的所有子节点
+    // 1 .父节点。childNodes：父节点下所有的子节点
+//    document.body.childNodes
+    // 2 .父节点。children：父节点下所有的元素子节点
+//    docunmet.body.children
+
+    var oDiv = document.getElementById('div1');
+    // 3 .oDiv.previousSibling    oDiv的哥哥节点
+//    oDiv.previousSibling
+    // 4 .oDiv.nextsibling     oDiv的弟弟节点
+//    oDiv.nextSibling
+    // 5 .oDiv。previousElementSibling      oDiv的哥哥元素节点
+//    oDiv.previousElementSibling
+    // 6 .oDiv.nextElementSibling     oDiv的弟弟元素接地单
+//    oDiv.nextElementSibling
+    // 7 .父节点.firstChild   第一个子节点
+//    document.body.firstChild
+    // 8 .父节点.firstElementChild    第一个元素节点
+//    document.body.firstElementChild
+    // 9 .父节点.lastChild    最后一个子节点
+    // 10.父节点.lastElementChild     最后一个元素节点
+    // 11.oDiv.parentNode    oDiv的父节点
+
+//    var span = document.getElementsByTagName('span');
+//    function getBigBrother(ele) {
+//        ele = ele.previousSibling;
+//        while(ele && ele.nodeType != 1){
+//            ele = ele.previousSibling;
+//             }
+//             return ele ;
+//        }
+
+
+    var myH1 = document.createElement('h1');
+//    oDiv.appendChild(myH1);
+    myH1.innerHTML = '<a>holle</a>';
+//    myH1.innerText = '<a>holle</a>';
+
+
+//    父节点.insertBefore(new,old); 在父节点下，old元素的前边添加一项  new 元素
+    var oSpan = document.getElementById('span');
+//    oDiv.insertBefore(myH1,oSpan);
+    oDiv.replaceChild(myH1,oSpan);  // 在父节点下  用new去代替 old 元素
+    oDiv.removeChild(myH1);    // 删除元素
+    console.log(oDiv.getAttribute('myData'));   //获取自定义属性名的方式
+    //若是  通过  打点的方式  添加到元素的属性  我们只能通过打点的方式获取
+    //若是  写到行内的属性  我们只能通过  getAttribute  的方式获取
+
+    oDiv.setAttribute('myid',100);   //setAttribute（‘属性名’，属性值）
+
+
+
+</script>

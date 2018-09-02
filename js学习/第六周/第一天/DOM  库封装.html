@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+<div id="div1">
+    zhangjunsong
+    <p class="box">1</p>
+    <p class="box1">2</p>
+    <!--zhushi-->
+    <p class="box2">3</p>
+    <p class="box box1">4</p>
+    <p class="box box1 box2">5</p>
+</div>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * children:元素子节点
+    * childNodes:所有的子节点（换行、注释、文字。。。）
+    * */
+    var oDiv = document.getElementById('div1');
+//    function childern(ele) {
+//        //先去拿到所有的子节点，然后在从这些子节点中筛选出元素子节点
+//        //var childs = ele.childNodes;
+//        //优化。直接循环children；可以减少循环次数
+//        var childs = ele.children;
+//        var ary = [];
+//        for (var i = 0; i < childs.length; i++) {
+//            if(childs[i].nodeType == 1){
+//                ary.push(childs[i])
+//            }
+//            return ary
+//        }
+//    }
+
+    /*
+    * 写一个 根据类名获取元素的函数
+    * */
+
+    /*
+    * @str  类名
+    * @context  上下文
+    * */
+    function getByClass(str,context) {
+        /*
+        * 先去拿到context下  所有的 元素子节点
+        * 然后在从这些节点中筛选出有str这个类名的
+        * */
+        context = context || document ;
+        str = str.replace(/^ +| +$/g,'');
+        var ary = [];//存放符合条件的元素
+//        var eles = childern(context);  只能获取儿子一辈的
+        var eles = context.getElementsByTagName('*');
+        //把context下所有的标签取到
+        /*
+        * 筛选  根据元素的类名中是否含有 str
+        * */
+        //用正则 判断 eles[i].className  中是否含有 str这个类名
+        var reg = new RegExp('(^| +)'+str+'( +|$)');
+        //以  str  开头 的满足
+        //以  str  结尾 的满足
+        //str前边空格  满足
+        //str后边空格  满足
+        //box  box2
+        for (var i = 0; i < eles.length; i++) {
+            if(reg.test(eles[i].className)){
+                ary.push(eles[i])
+            }
+        }
+            return ary
+    }
+    console.log(getByClass('box',oDiv));// 所有含有box的元素拿到
+
+    function getByClass(str,context) {
+        context = context || document;
+        str = str.replace(/^ +| +$/g,'');
+        var classAry = str.split(/ +/);
+        var eles = context.getElementsByTagName('*');
+//        !classAry[0].length ? classAry.shift(): null;
+//        !classAry[classAry.length - 1] ? classAry.pop():null;
+        for (let k = 0; k < classAry.length; k++) {
+            var reg = new RegExp('(^| +)'+classAry[k]+'( +|$)');
+            var ary = [];
+            for (let i = 0; i < eles.length; i++) {
+                if(reg.test(eles[i].className)){
+                    ary.push(eles[i])
+                }
+            }
+            //ary 存放的是 满足  box  这个类名的元素
+            eles = ary ;
+        }
+        return ary ;
+    }
+    console.log(getByClass('box box2'));
+
+
+</script>

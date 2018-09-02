@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    //    var ary = [];
+    //    //数组的每一项都有一个属性名（数组本身就是一个对象，他只是对象的一个细分）跟它对应。这里的属性名（依次递增的数字）我们叫做索引
+    //    //数组的每一项的数据类型 是 可以为 任意数据类型
+    //    //数组里的变量，我们是要把对应的变量值放到相应的位置
+    //
+    //    for(var k in ary){
+    //        //k  每一个属性名
+    //        console.log(ary[k]);
+    //    }
+    //
+    //    for (var i = 0; i < ary.length; i++) {
+    //        console.log(ary[i]);
+    //
+    //    }
+    //
+    //    var n = 0 ;
+    //    while (n<ary.length){
+    //        console.log(ary[n]);
+    //        n++;
+    //    }
+
+//    var ary = [];
+//    //  ary [3] = 'qq'
+//    //    push()  在数组的末尾增加几项
+//    //    push(xxx，xxx，xxx)  参数可以有很多个，参数的数据类型不限、因为数组里面的类型就是不限；返回值是改变后数组的长度
+//    var a = ary.push(1);   //赋值   是吧右边的运行结果赋值给左边；右边的运行的结果就是push  函数的返回值；
+//    ary.push(function () {
+//        console.log(12);
+//    });
+//    console.log(ary);   //集合
+//    ary[0]();   //函数执行
+//
+////    length;
+//    //数组的索引是从0开始的；数组的最后一项的索引是ary.length-1
+//    ary[ary.length-1] ;
+//    ary[ary.length] = '123';
+//    ary[ary.length+1] = '123';
+//    ary[20] = '123';   //empty
+//    console.log(ary);
+//
+//    function myPush(ary,n) {
+//        ary[ary.length] = n;
+//        return ary.length;
+//    }
+//    myPush(ary,'pppp');
+//    console.log(ary);
+//
+//
+//    var ary2 = [12,23,13,14];
+//    var res = ary2.unshift(1,2,3);
+//    console.log(res, ary2);
+//
+//    var ary3 = [12,13,14];
+//    var res3 = ary3.pop();
+//    console.log(res3, ary3);
+//
+//    用length 删除最后一项
+//    ary3.length = ary3.length -1;
+//
+//
+//    var ary4 = [12,13,14];
+//    var res4 = ary4.shift();
+//    console.log(res4, ary4);
+
+//    var ary5 = [12,13,14];
+//    var res5 = ary5.splice(1,1,21,22,22,32);
+//    console.log(res5, ary5);
+
+//    function myPush2(ary,n) {
+//        //ary  要操作的数组
+//        //n  需要添加的项
+//        ary.splice(ary.length,0,n);   //在最后一项的后一项删除0个用N代替删除的那0个也就是在最后一项的后一项添加一项
+//        ary.splice(ary.length-1,0,n);   //在最后一项前面添加一项
+//        return ary.length;    // 返回改变后的数组的长度
+//    }
+//    var res5_4 = myPush2(ary5,15);
+
+//    var ary = [1,2,3,4,5];
+////    var res = ary.reverse();
+////    console.log(ary, res);
+//
+//    function myReverse(ary) {
+//        for (var i = 0; i < ary.length/2; i++) {
+//            var temp = ary[i];
+//            ary[i] = ary[ary.length - 1 - i];
+//            ary[ary.length - 1 - i] = temp;
+//        }
+//        return ary;
+//    }
+//   var res = myReverse(ary);
+//    res[0] = 9;
+//    console.log(res, ary);
+
+
+//    var ary2 = [1,2,3,4,5,6,7,8,9,0,0,1];
+    //    var res2 = ary2.sort();
+    //    console.log(res2, ary2);
+    //
+    //
+    //    var ary3 = [11,5548,4512,1125,121516];
+    //    正序排列
+    //    ary3.sort(function (a,b) {
+    //        console.log(a, b);
+    //        //当返回值是正数时  对应的两项要调换位置
+    //        return a - b ;
+    //    });
+    //    倒序排列
+    //    ary3.sort(function (a,b) {
+    //        console.log(a, b);
+    //        //当返回值是正数时  对应的两项要调换位置
+    //        return b - a ;
+    //    })
+    //
+    //    //非数字排序方法
+    //    var ary4 = ['a','b','h','r','d'];
+    //    //localeCompare
+
+//
+//    var ary = [1,2,3,4,5,6];
+//    var res = ary.toString();
+//    console.log(res, ary);
+//
+//
+//    var res2 = ary.join();        // 他是默认是逗号链接
+//    var res3 = ary.join(',');     //以逗号隔开
+//    var res4 = ary.join('+');     // 以加号隔开
+//    var res5 = ary.join(' ');     // 默认以逗号隔开
+//    var res6 = ary.join('');      // 默认以逗号隔开
+//
+//    eval(); // 把字符串转化成  表达式
+//    var str = '1+2+3';
+//    console.log(eval(str));
+
+//    var ary = [1,2,3,4,5,6];
+//    var res1 = ary.concat();//不传参数等于数组复制一份  返回给res1
+//    res1[0] = 9 ;    //修改的是复制的那一份   原数组不变
+//    console.log(res1,ary);
+//    //当参数时数组时，他会吧这个数组拆开，一项一项的放到新数组中
+//    //当数组是其他数据类型时，他是整个的拼到新数组中
+//    var ary = [1,2,3,4,5,6];
+//    var res = ary.slice(1,2);
+//    var res2 = ary.slice();   //复制一份
+//    var res3 = ary.slice(0);  //复制一份
+//    console.log(res.ary);
+
+
+//    var ary = [1,2,3,4,5,6,3,1,{m:1}];
+//    console.log(ary.indexOf(3));        //  2
+//    console.log(ary.lastIndexOf(3));    //  6
+//    console.log(ary.indexOf(1));        //  0
+//    console.log(ary.lastIndexOf(1));    //  7
+//    console.log(ary.indexOf(7));        //  -1
+//    console.log(ary.indexOf({m:1}));        //  -1
+//    console.log(ary.lastIndexOf(7));    //  -1
+
+
+    var ary = [1,1,2,2,3,3,4,4,5,4,4,4,4,4,4,4,4,5,6,6,7,8,8,9,111,588,111,8588,588];
+//    function removeRep(ary) {
+//        for (var i = 0; i < ary.length; i++) {
+//            var cur = ary[i];   //当前项
+//            for (var n = i+1; n < ary.length; n++) {// 我们要用当前项和后边的每一项做比较，如果相等就把后边相等的这一项删除
+//                if(cur == ary[n]){
+//                    ary.splice(n,1);//当我们删除数组的某一项时，会导致后边的项统一向前错一位（数组塌陷的问题），这时我们若还想拿到数组的每一项，需要将我们变化的索引-1；
+//                    n--;   //等于  n - 1
+//                }
+//            }
+//        }
+//        return ary;
+//    }
+//    console.log(removeRep(ary));
+
+//    function removeRep2(ary) {
+//        var obj = {},
+//            arr = [];
+//        for (var i = 0; i < ary.length; i++) {
+//            obj[ary[i]]=ary[i];
+//        }
+//        for(var k in obj){
+//            arr.push(obj[k])
+//        }
+//        return arr;
+//    }
+//    console.log(removeRep2(ary));
+
+
+    var ary = [1,2,3,4,5,6];
+    var res = ary.slice(1,-1);
+    console.log(res, ary);
+
+    ary.push()
+
+
+</script>

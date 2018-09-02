@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    //    var ary = [];
+    //    var obj = {};//属性名是任意数据类型
+    //    本身就是对象的一种细分，属性名是从 0 开始一次递增的数字
+    //    我们把这些一次递增的数字属性名叫做索引
+    //    对象中获取对应属性名的属性值  打点   ['']
+    //    对象中若属性名是数字，那么我们只能用[]的方式
+    //    obj[1]   //  数字属性名的时候我们可以把引号省略
+    //    obj['1']
+    //    obj['a'] //  在这里不加引号是变量
+
+
+    var ary = [1, 2, 3, 4, 5, 6];
+//    ary.push(8);
+//    ary[ary.length] = 7;
+//    console.log(ary);
+
+//    ary.unshift(undefined,null,function () {
+//        console.log(111);
+//    });
+//    console.log(ary);
+
+//    ary.shift();
+//    ary.pop();
+//    ary.length = ary.length - 1;
+
+//    var ary2 = [1,2,3];
+//    function myPush() {
+//        var arr = arguments[0];
+//        for (var i = 1; i < arguments.length; i++) {
+//            arr[arr.length] = arguments[i]
+//        }
+//        return arr.length;
+//    }
+//    var ary = myPush(ary2,9,8,7,6,5,4);
+//    console.log(ary2);
+
+
+//    var ary = [1,2,3,4,5,6];
+    //    var temp = ary.splice(1,2,4,5,6);
+    //    console.log(temp,ary);
+
+
+//    var res = ary.reverse();
+//    console.log(res);
+
+//    function myReverse(ary) {
+//        for (var i = 0; i < ary.length/2; i++) {
+//            var temp = ary[i];
+//            ary[i] = ary[ary.length-1-i];
+//            ary[ary.length-1-i] = temp;
+//        }
+//        return ary ;
+//    }
+//    var res = myReverse(ary);
+//    console.log(res);
+
+//    var ary = [4,5,6,5,4,1,2];
+
+//    function myReverse(ary) {
+//        for (var i = 0; i < ary.length/2; i++) {
+//            var temp = ary[i];
+//            ary[i] = ary[ary.length - 1 - i];
+//            ary[ary.length - 1 - i] = temp;
+//        }
+//        return ary ;
+//    }
+
+//    var temp = ary.sort();
+//    console.log(temp);
+
+//    var temp = ary.sort(function(a,b){
+//        return  a - b ;
+//    })
+
+//    var ary2 = [
+//        {name:'xh',age:18},
+//        {name:'xm',age:19},
+//        {name:'xz',age:16},
+//        {name:'xl',age:14},
+//        {name:'xl',age:29},
+//        ];
+//
+//    ary2.sort(function (a,b) {
+//        return a.age - b.age ;
+//    })
+
+//    var ary = [1,2,3,4,5];
+//    var res = ary.toString();
+//    var res1 = ary.join('+');
+//    console.log(res1);
+//    console.log(eval(res1));
+//    var res = ary.slice(-4,-1);
+//    console.log(res);
+
+
+//    var temp = ary.concat(12,13,45);
+//    console.log(temp);
+
+
+//    function obj(ary) {
+//        for (var i = 0; i < ary.length; i++) {
+//            var cur = ary[i];
+//            for (var n =i + 1; n < ary.length; n++) {
+//                if (cur == ary[n] ){
+//                    ary.splice(n,1);
+//                    n -- ;
+//                }
+//            }
+//        }
+//        return ary ;
+//    }
+//
+//    var res = obj(ary);
+//    res.sort(function (a,b) {
+//        return a - b
+//    });
+//    console.log(res);
+//    思路3
+    //造一个新数组，循环老数组，判断数组中是否由老数组的当前项；若没有，则给这个新数组添加一项，值为老数组的当前项
+//    function obj(ary) {
+//        var temp = [];
+//        for (var i = 0; i < ary.length; i++) {
+//            if (temp.indexOf(ary[i]) == -1){
+//                temp.push(ary[i]);
+//            }
+//        }
+//        return temp;
+//    }
+//    console.log(obj(ary));
+
+//    var ary = [1,1,2,3,2,3,6,5,4,5,4,6,8,7,8,7,8,79,66];
+//
+//    function boj(ary) {
+//        var temp = {};
+//        var arr  = [];
+//        for (var i = 0; i < ary.length; i++) {
+//            temp[ary[i]] = ary[i]
+//        }
+//        for (var k in temp){
+//            arr.push(temp[k])
+//        }
+//        return arr ;
+//    }
+//    console.log(boj(ary));
+
+
+
+
+//    var ary = [3,2,1,5,6,4,8,5,9,78,95,62,52,63,21,32];
+//    function sortBubble(ary) {
+//        for (var i = 0; i < ary.length; i++) {
+//            for (var n = 0; n < ary.length - 1; n++) {
+//                var cur = ary[n];
+//                if(ary[n] > ary[n + 1]){
+//                    ary[n] = ary [n + 1];
+//                    ary [n + 1] = cur;
+//                }
+//            }
+//        }
+//        return ary;
+//    }
+//    console.log(sortBubble(ary));
+
+//    function sum(n) {
+//        if (n <= 0){
+//            return 0 ;
+//        }
+//        if ( n%3 == 0){
+//            return n + sum(n - 1)
+//        }
+//        return sum(n-1)
+//    }
+//    console.log(sum(10));
+
+    function sum(ary) {
+        if (ary <= 1){
+            return ary ;
+        }
+        var n = parseInt(ary.length/2),
+            cur = ary.splice(n,1)[0],
+            left = [],
+            right = [];
+        for (var i = 0; i < ary.length; i++) {
+            if(ary[i] < cur){
+                left.push(ary[i])
+            }else {
+                right.push(ary[i])
+            }
+        }
+        return sum(left).concat(cur,sum(right))
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

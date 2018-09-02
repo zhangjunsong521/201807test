@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon"
+          href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535200515034&di=c04f6ea475c752da90b0a9f50e929339&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20150917%2Fmp32275173_1442477519172_1_th.jpeg">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .imgBox{
+            margin: 50px auto;
+            border: 2px dashed #0000ff;
+            width: 480px;
+            height: 640px;
+            padding:10px 0 0 10px;
+            background-color: #00deff;
+            overflow: hidden;
+            list-style: none;
+            position: relative;
+            /*box-sizing: border-box;*/
+        }
+        .imgBox li{
+            float: left;
+            width: 150px;
+            height: 150px;
+            margin: 0 10px 10px 0;
+            background-color: white;
+        }
+        .imgBox li img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<ul class="imgBox">
+    <li>
+        <img src="img/1.png" alt="">
+    </li>
+    <li>
+        <img src="img/2.png" alt="">
+    </li>
+    <li>
+        <img src="img/3.png" alt="">
+    </li>
+    <li>
+        <img src="img/4.png" alt="">
+    </li>
+    <li>
+        <img src="img/5.png" alt="">
+    </li>
+    <li>
+        <img src="img/6.png" alt="">
+    </li>
+    <li>
+        <img src="img/7.png" alt="">
+    </li>
+    <li>
+        <img src="img/8.png" alt="">
+    </li>
+    <li>
+        <img src="img/9.png" alt="">
+    </li>
+    <li>
+        <img src="img/10.png" alt="">
+    </li>
+    <li>
+        <img src="img/11.png" alt="">
+    </li>
+    <li>
+        <img src="img/12.png" alt="">
+    </li>
+
+</ul>
+
+</body>
+</html>
+<script src="js/drag.js"></script>
+<script src="js/event.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+    /*
+    * 1.拖拽对应的照片  我们让对应的图片移动
+    * 2.判断碰撞  跟谁碰撞  就让谁变色
+    * 3.我们把拖动的这张图片跟  距离他最近的一张图交换位置
+    * */
+
+    //给每一个li  加一个定位
+    var olis = document.getElementsByTagName('li');
+    [...olis].reverse().forEach((item)=>{//方法一
+        //每一个li的当前位置 可以用他的offset值进行定位
+        item.style.left = item.offsetLeft + 'px';
+        item.style.top = item.offsetTop + 'px';
+        item.style.position = 'absolute';//item 直接脱离文档流
+        on(item,'mousedown',dragStart);//给图片添加拖动效果
+        on(item,'myIndex',addZIndex);//给这个元素的myIndex 事件池增加一个事件
+        on(item,'myHit',isHit);//给这个元素绑定碰撞函数
+        on(item,'myChangePos',changePos);
+    });
+//    function setPosition() {//方法二
+//        var ary = [];
+//        [...oLis].forEach((item)=>{
+//            var obj = {};
+//            obj.l = item.offsetLeft;
+//            obj.t = item.offsetTop;
+//            ary.push(obj);
+//        });
+//        [...oLis].forEach((item,index)=>{
+//            item.style.position = 'absolute';
+//            item.style.left = ary[index].l + 'px';
+//            item.style.top = ary[index].t + 'px';
+//        })
+//    }
+    /*
+    * 提升拖动元素的zIndex
+    * */
+    var n = 1 ;
+    function addZIndex() {
+        this.style.zIndex = n++;
+    }
+    /*
+    * 接下来你处理碰撞问题
+    * */
+    function isHit() {
+        //判断是否发生碰撞
+        this.sl = this.offsetLeft;//拖动元素左边到盒子的距离
+        this.el = this.sl + this.offsetWidth;//拖动元素 右边到盒子的距离
+        this.st = this.offsetTop;//拖动元素的上边  到盒子的距离
+        this.et = this.st + this.offsetHeight;// 拖动元素的下边  到  和盒子的距离
+        //我么需要 那拖动元素 跟其他所有元素作比较  查看是否碰撞
+        this.ary = [];//存放给拖动元素碰撞上的元素
+        [...olis].forEach((item,index)=>{
+            if(item === this)return;//循环所有的li  用拖动元素跟其他元素作比较；如果比较的元素是自己的时候就什么都不做
+            item.sl = item.offsetLeft;
+            item.el = item.sl + item.offsetWidth;
+            item.st = item.offsetTop;
+            item.et = item.st + item.offsetHeight;
+            if(this.sl > item.el || this.el < item.sl || this.st > item.et || this.et < item.st){
+                //撞不上的
+                item.style.background = '';//没有碰撞时是空
+            }else {
+                item.style.background = '#4fd0d3';//碰撞之后变色
+                this.ary.push(item);//把能碰撞的元素放到  this.ary 中
+            }
+        })
+    }
+
+    /*
+    * 交换位置
+    * */
+    function changePos() {
+        //要跟距离拖动元素最近的那个li交换位置
+        this.ary = this.ary || [];
+        this.ary.forEach((item)=>{
+            //l 是 拖动元素距离当前碰撞元素的  横向差值
+            //t 是 拖动元素距离当前碰撞元素的  纵向差值
+            var l = this.offsetLeft - item.offsetLeft;
+            var t = this.offsetTop - item.offseTop;
+            item.style.background = '';//让发生碰撞的元素松手时  让颜色回复
+            item.instance = Math.pow(l,2) + Math.pow(t,2)
+        });
+        //在根据  每个元素的instance排序
+        this.ary.sort((a,b)=>{
+            return a.instance - b.instance
+        });
+        //用 this.ary【0】  跟咱们的  this（拖动的元素）交换位置
+        //this.startX  this.staryY  储存的是盒子初始的位置
+        //item.offsetLeft  item.offsetTop  储存的item位置
+        //如果数组为空
+        if(!this.ary.length){
+            $(this).animate({
+                left:this.startX,
+                top:this.startY,
+            },200);
+//            this.style.left = this.startX + 'px';
+//            this.style.top = this.startY + 'px';
+        }else {
+            $(this).animate({
+                left:this.ary[0].offsetLeft,
+                top:this.ary[0].offsetTop
+            },200);
+//            this.style.left = this.ary[0].offsetLeft + 'px';
+//            this.style.top = this.ary[0].offsetTop + 'px';
+            $(this.ary[0]).animate({
+                left:this.startX,
+                top:this.startY
+            },200);
+//            this.ary[0].style.left = this.startX + 'px';
+//            this.ary[0].style.top = this.startY + 'px';
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

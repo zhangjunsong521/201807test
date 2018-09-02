@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+//    call  改变this  关键字用的
+//    f1.call ( obj )  ;   先把f1中的this  执行改成 obj   在让f1  执行
+    "use strict";     //严格模式
+    function f1() {
+        console.log(this);
+    }
+    var obj = {
+        name : 'zhufeng'
+    };
+    f1.call(obj);  //   obj这个对象
+    f1.call();     //   window               严格模式    undefined
+    f1.call(null);     //   window           严格模式    null
+    f1.call(undefined);     //   window      严格模式    undefined
+    f1();    //   window                     严格模式    undefined
+</script>

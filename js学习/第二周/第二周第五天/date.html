@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+<div id="div1">时间</div>
+
+</body>
+</html>
+<script>
+    function time1() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth();
+        var date = now.getDate();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds()< 10 ? '0' + now.getSeconds():now.getSeconds();
+        var day = now.getDay();
+        var ary = ['天','一','二','三','四','五','六'];
+        var time = `${year}/${month}/${date}  星期${ary[day]}  ${hours}:${minutes}:${seconds}`;
+        console.log(time);
+
+    }
+
+    var times = window.setInterval(time1,1000);
+    console.log(times);
+
+
+</script>

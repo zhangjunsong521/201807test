@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #div1{
+            width: 800px;
+            height: 200px;
+            margin: 100px auto  0 ;
+            overflow: hidden;
+
+        }
+        .ul_box{
+            width: 1600px;
+            height: 200px;
+            margin: auto;
+            overflow: hidden;
+            border: dashed 1px #cccccc;
+        }
+        li{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+    </style>
+    <script src="js/utils.js"></script>
+
+</head>
+<body>
+
+<div id="div1">
+    <ul class="ul_box">
+        <li><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/4.jpg" alt=""></li>
+    </ul>
+</div>
+
+</body>
+</html>
+<script>
+    var oDiv = document.getElementById('div1');
+    var oUl = document.getElementsByClassName('ul_box')[0];
+//    var maxW = oDiv.scrollWidth - oDiv.clientWidth;
+    oUl.innerHTML += oUl.innerHTML;
+//    oUl.style.width = utils.getcss(oUl,'width')*2 + 'px';
+
+    var timer = window.setInterval(function () {
+         var n = oDiv.scrollLeft++;
+//        oDiv.scrollLeft+=1;
+        if (n == oDiv.scrollLeft){
+            oDiv.scrollLeft = 0
+        }
+
+    },5)
+
+
+</script>

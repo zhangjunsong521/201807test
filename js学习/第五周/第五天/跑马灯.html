@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .big_box{
+            width: 800px;
+            height: 200px;
+            border: dashed 1px #333333;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .big_box ul {
+            width: 800px;
+            height: 200px;
+            overflow: hidden;
+        }
+        .big_box ul li {
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        .big_box ul li img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="瀑布流/js/utils.js"></script>
+</head>
+<body>
+
+<div class="big_box">
+    <ul>
+        <li><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/4.jpg" alt=""></li>
+    </ul>
+</div>
+
+
+</body>
+</html>
+<script>
+    var oDiv = document.getElementsByClassName('big_box')[0];
+    var oUl = document.getElementsByTagName('ul')[0];
+    oUl.innerHTML += oUl.innerHTML;
+    oUl.style.width = utils.getcss(oUl,'width')*2 + 'px';
+//    var maxl = oDiv.scrollWidth - oDiv.clientWidth;
+    var timer = window.setInterval(function () {
+        var n = oDiv.scrollLeft ++;
+        if(n === oDiv.scrollLeft){
+            oDiv.scrollLeft = 0
+        }
+    },5)
+
+</script>

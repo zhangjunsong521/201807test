@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+    <style>
+        body{
+            background: salmon;
+        }
+        #div1{
+            height: 2000px;
+            background: #cccccc;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        .bot{
+            height: 400px;
+            background: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">珠峰培训</div>
+    <img src="imgs/img/default.gif" realsrc="img/2.jpg" alt="">
+    <img src="imgs/img/default.gif" realsrc="img/2.jpg" alt="">
+    <img src="imgs/img/default.gif" realsrc="img/2.jpg" alt="">
+    <img src="imgs/img/default.gif" realsrc="img/2.jpg" alt="">
+    <img src="imgs/img/default.gif" realsrc="img/2.jpg" alt="">
+    <img src="imgs/img/default.gif" realsrc="img/2.jpg" alt="">
+    <img src="imgs/img/default.gif" realsrc="img/2.jpg" alt="">
+    <div class="bot"></div>
+</body>
+</html>
+<script src="瀑布流/js/utils.js"></script>
+<script>
+
+    var oImg = document.getElementsByTagName('img');
+    function loabImg(ele) {
+        if(ele.loaded){return;}
+        var scrollT = utils.scrollT();
+        var clientH = utils.clientH();
+        var tarT = utils.offset(ele).t;
+        if(scrollT + clientH > tarT){
+            var realSrc = ele.getAttribute('realSrc');
+            var temp = document.createElement('img');
+            temp.src = realSrc;
+            temp.onload = function () {
+                ele.src = realSrc;
+                ele.loaded = true;
+                fadeIn(ele);
+            };
+        }
+    }
+    window.onscroll = function () {
+        loabImg(oImg);
+
+    };
+
+    function fadeIn(ele) {
+        ele.style.opacity = 0 ;
+        var opa = 0.1 ;
+        var timer = setInterval(function () {
+            opa += 0.1;
+            ele.style.opacity = opa;
+            if (opa >= 1){
+                ele.style.opacity = 1 ;
+                clearInterval(timer);
+            }
+        },20)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

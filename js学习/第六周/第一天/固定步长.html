@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: #3059fa;
+            position: relative;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="div1" class="box"></div>
+
+</body>
+</html>
+<script src="utils.js"></script>
+<script>
+
+    /*
+    * 固定步长的运动
+    * 每次移动相同的距离
+    * */
+
+    var oDiv = utils.getByClass('box')[0];
+    var tarL = utils.clientW() - oDiv.offsetWidth;
+    var l = 0 ;
+    var timer = window.setInterval(function () {
+        l += 10;
+        if( l >= tarL){
+            clearInterval(timer);
+            l = tarL;
+        }
+//        oDiv.style.left = l+'px';
+        utils.css(oDiv,'left',l);
+    },20)
+
+
+
+
+
+
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+<div id="div">wo </div>
+
+</body>
+</html>
+<script>
+
+    setTimeout(f,time)  只执行一次  f 是个函数体  time是毫秒级的时间
+    clearTimeout  清除定时器（setTimeout）
+    var timer = window.setTimeout(function () {
+        console.log(122);
+    },2000);//两秒之后我要做的函数
+    window.clearTimeout(timer);
+    *创建定时器的时候要注意给定时器一个名字  没有名字无法清除
+    2.setInterval(f,time)   执行无限次    f 是个函数体  time是毫秒级的时间
+    clearInterval     清除定时器（setInterval）
+    var timer2 = window.setInterval(function () {
+        console.log(133);
+    },1000);
+    window.clearInterval(timer2);
+    var oDiv = document.getElementById('div');
+    function getTime() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var date = now.getDate();
+        var hour = now.getHours()< 10 ? '0'+ now.getHours():now.getHours();
+        var minutes = now.getMinutes()< 10 ? '0'+ now.getMinutes():now.getMinutes();
+        var second = now.getSeconds()< 10 ? '0'+ now.getSeconds():now.getSeconds();
+        var day = now.getDay();
+        var weekObj = {
+            0: '天',
+            1: '一',
+            2: '二',
+            3: '三',
+            4: '四',
+            5: '五',
+            6: '六',
+        };
+        var ary = ['天','一','二','三','四','五','六'];
+        var star = `今天是${year}年${month}月${date}日 星期${ary[day]} ${hour}：${minutes}：${second}`;
+        oDiv.innerHTML = star ;
+    }
+    var timer = setInterval(getTime,1000);
+
+
+
+
+</script>

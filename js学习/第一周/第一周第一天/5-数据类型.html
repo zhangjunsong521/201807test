@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title></title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    //Number  数据类型
+    //包含（整数、小数、NaN（not a number））
+    // Number()  //把其他数据类型转化成数字，他在转化时，只要字符里边有非数字，就会转化为NaN
+    Number();
+    console.log(Number(.5));//0.5
+    console.log(Number('.5'));//0.5
+    console.log(Number(''));//0
+    console.log(Number('  '));//0
+    console.log(Number('12q'));//NAN
+    console.log(Number());//0
+    console.log(Number(false));//0
+    console.log(Number(true));//1
+    console.log(Number([]));//0
+    console.log(Number({}));//NAN
+    console.log(Number(null));//0
+    console.log(Number('nudefined'));//NAN
+    //把浮点型转化成  整形
+    console.log(parseInt(1.39));//等于1    小数点以后全部去除
+    console.log(parseInt('1.3q'));//等于1    小数点以后全部去除
+    console.log(parseInt('12q.3'));//等于12    小数点以后全部去除
+    console.log(parseInt('q12.3'));//NAN
+    console.log(parseInt('.5'));//NAN
+    console.log(parseInt(.5));//0
+    console.log(parseInt(''));//NAN
+    console.log(parseFloat(1.8));//等于1.8   取全部数值
+    console.log(parseFloat(.5));//等于0.5   取全部数值
+    console.log(parseFloat('.5'));//等于0.5   取全部数值
+    console.log(parseFloat('.5q'));//等于0.5   取全部数值
+    console.log(parseFloat(''));//NAN
+
+</script>

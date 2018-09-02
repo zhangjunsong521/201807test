@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            width: 500px;
+            margin: auto;
+        }
+
+        li {
+            font-size: 30px;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            list-style: none;
+            border-bottom: solid 1px #cccccc;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+
+</body>
+</html>
+<script>
+    /*var oLis = document.getElementsByTagName('li');
+     console.log(oLis);*/
+    //获取li
+    function buTag(tag) {
+        var oLis = document.getElementsByTagName(tag);
+        return oLis;
+    }
+    var lis = buTag('li');
+    //console.log(lis);
+
+
+    //给每个li添加颜色
+    function changeBg(lis) {
+        for (var i = 0; i < lis.length; i++) {
+            if (i % 2 == 0) {
+                lis[i].style.backgroundColor = '#1CCC3A'
+            } else {
+                lis[i].style.backgroundColor = '#CC8F21'
+            }
+        }
+    }
+    console.log(changeBg(lis));
+
+    //当鼠标滑过时颜色变换
+    var col = '';
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].onmouseover = function () {
+            col = this.style.backgroundColor;
+            this.style.backgroundColor = 'red'
+        };
+        lis[i].onmouseout = function () {
+            this.style.backgroundColor = col
+        };
+    }
+
+</script>

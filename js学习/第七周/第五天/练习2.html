@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon"
+          href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535200515034&di=c04f6ea475c752da90b0a9f50e929339&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20150917%2Fmp32275173_1442477519172_1_th.jpeg">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .imgBox{
+            margin: 50px auto;
+            border: 2px dashed #0000ff;
+            width: 480px;
+            height: 640px;
+            padding:10px 0 0 10px;
+            background-color: #00deff;
+            overflow: hidden;
+            list-style: none;
+            position: relative;
+        }
+        .imgBox li{
+            float: left;
+            width: 150px;
+            height: 150px;
+            margin: 0 10px 10px 0;
+            background-color: white;
+        }
+        .imgBox li img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<ul class="imgBox">
+    <li>
+        <img src="img/1.png" alt="">
+    </li>
+    <li>
+        <img src="img/2.png" alt="">
+    </li>
+    <li>
+        <img src="img/3.png" alt="">
+    </li>
+    <li>
+        <img src="img/4.png" alt="">
+    </li>
+    <li>
+        <img src="img/5.png" alt="">
+    </li>
+    <li>
+        <img src="img/6.png" alt="">
+    </li>
+    <li>
+        <img src="img/7.png" alt="">
+    </li>
+    <li>
+        <img src="img/8.png" alt="">
+    </li>
+    <li>
+        <img src="img/9.png" alt="">
+    </li>
+    <li>
+        <img src="img/10.png" alt="">
+    </li>
+    <li>
+        <img src="img/11.png" alt="">
+    </li>
+    <li>
+        <img src="img/12.png" alt="">
+    </li>
+
+</ul>
+
+</body>
+</html>
+<script src="js/drag.js"></script>
+<script src="js/event.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+    var olis = document.getElementsByTagName('li');
+    [...olis].reverse().forEach((item)=>{
+        item.style.left = item.offsetLeft + 'px';
+        item.style.top = item.offsetTop + 'px';
+        item.style.position = 'absolute';
+        on(item,'mousedown',dragStart);
+        on(item,'myIndex',addZIndex);
+        on(item,'myHit',isHit);
+        on(item,'myChangePos',changePos);
+    });
+    var n = 1;
+    function addZIndex() {
+        this.style.zIndex = n ++;
+    }
+    function isHit() {
+        this.sl = this.offsetLeft;
+        this.st = this.sl + this.offsetWidth;
+        this.el = this.offsetTop;
+        this.et = this.el + this.offsetHeight;
+        this.ary = [];
+        [...olis].forEach((item,index)=>{
+            if(item === this)return;
+            item.sl = item.offsetLeft;
+            item.st = item.sl + item.offsetWidth;
+            item.el = item.offsetTop;
+            item.et = item.el + item.offsetHeight;
+            if(this.sl > item.st || this.st < item.sl || this.el > item.et || this.et < item.el){
+                item.style.background = '';
+            }else {
+                item.style.background = '#43f4ff';
+                this.ary.push(item);
+            }
+        })
+    }
+    function changePos() {
+        this.ary.forEach((item,index)=>{
+            var l = this.offsetLeft - item.offsetLeft;
+            var t = this.offsetTop - item.offsetLeft;
+            item.style.background = '';
+            item.instance = Math.pow(l,2) + Math.pow(t,2);
+        });
+        this.ary.sort((a,b)=>{
+            return a.instance - b.instance
+        });
+        if(!this.ary.length){
+            $(this).animate({
+                left:this.startX,
+                top:this.startY,
+            },200);
+        }else {
+            $(this).animate({
+                left:this.ary[0].offsetLeft,
+                top:this.ary[0].offsetTop
+            },200);
+            $(this.ary[0]).animate({
+                left:this.startX,
+                top:this.startY
+            },200);
+        }
+    }
+
+</script>

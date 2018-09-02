@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    //    function Person() {
+    //        this.name = 'zfpx';
+    //        this.age = 9 ;
+    //    }
+    //    console.log(Person.prototype.constructor === Person);  //  true
+    //    Person.prototype.getName = function () {
+    //        console.log(this.name);
+    //    };
+    //    console.log(Person.prototype);  //  添加了一个属性名为getName 的对象
+    //    console.log(Person.prototype.getName());   //   undefined   返回值
+    //
+    ////    var per1 = new Person();
+    //    var per1 = new Person;  //  当构造函数不需要传参数的时候，后边括号可以省略；
+    //
+    //    //  per1  称为  Person  这个类的一个实例   同时他也是一个对象
+    //    console.log(per1);  //  输出两个对象   一个name   一个age
+    //
+    //    per1.getName();   //  zfpx
+    //
+    //    console.log(per1.__proto__ === Person.prototype);  //  true
+    //
+    //
+    //
+    //
+    //        function Person(name,age) {
+    //            this.name = name;
+    //            this.age = age;
+    //        }
+    //        var per = new Person('zfpx',9);
+    //        var per2 = new Person('xh',12);
+
+
+    //
+    //        function Person() {
+    //            this.name = 'zhufeng'
+    //        }
+    //        Person.prototype.getName = function () {
+    //            console.log(this.name);
+    //        };
+    //
+    //        Person.prototype.age = 5000;
+    //
+    //        var per1 = new Person;
+    //        per1.age = 9 ;
+    //        console.log(per1, age);
+    //        //name  属于  per1  这个实例的私有属性
+    //
+    //        var per2 = new Person;
+    //        console.log(per2, age);
+    //
+    //
+    //
+    //        var ary = [1,2,3];
+    //        ary.qq()   //  报错   因为整个原型链上都没有这个qq的方法
+    //        [].__proto__.qq = function () {
+    //            console.log(10);
+    //        };
+    //        //手动添加了一个qq的方法；后边所有的数组都能使用这个方法
+    //        [1,2,3].qq()
+
+
+//    var myPush = function (ary, n) {
+//        ary[ary.length] = n;
+//    };
+//    var myPush = function (n) {
+//        //  怎么拿到这个数组  -->  通过  this  可以获取到  要操纵的数组
+//        this[this.length] = n;
+//        return this.length;
+//    };
+//    var myPush2 = function () {
+//        //  怎么拿到这个数组  -->  通过  this  可以获取到  要操纵的数组
+//        for (let i = 0; i < arguments.length; i++) {
+//            this[this.length] = arguments[i]
+//        }
+//        return this.length;
+//    };
+//    //    [].__proto__.myPush = myPush;
+////    Array.prototype.push = myPush;
+//    Array.prototype.myPush2 = myPush2;
+//    var ary = [1, 2, 3];
+//    console.log(ary.myPush2(10),ary);
+//
+//
+//    var ary = [];
+//    var obj = {};
+//    console.log(obj instanceof Array);    //  false
+//    console.log(ary instanceof Array);    //  true
+//    console.log(ary instanceof Object);   //  true
+//    //查看  这个变量的类型  在不在   对应的原型链上
+//
+
+
+    function Person() {
+        this.name = '';
+        this.age = '';
+    }
+    Person.prototype.getName = function () {
+        console.log(this.name);
+    };
+    var per1 = new Person;
+    per1.getName();
+
+    console.log(per1.hasOwnProperty('name'));   //  true
+    console.log(per1.hasOwnProperty('getName'));//  false
+
+    console.log('getName' in per1);   //true
+    console.log('toString' in per1);   //true
+    per1.toString();
+
+
+//    写一个  判断某个属性或方法是否是  公有属性或者方法
+
+    per1.hasPublicProperty('getName');  //  true
+    per1.hasOwnProperty('getName');  //  false
+
+
+    Object.prototype.hasPublicProperty = function (str) {
+        //要判断某个属性是否属于这个对象的共有属性，首先要判断，这个属性在不在对应的原型链上，若在   在去判断  他是否是共有属性
+        if (str in this  &&  !this.hasOwnProperty(str)){
+            //在原型链上  而且 也不是私有属性
+            return true
+        }
+        return false;
+    }
+
+
+
+
+
+
+
+</script>

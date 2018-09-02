@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon"
+          href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535200515034&di=c04f6ea475c752da90b0a9f50e929339&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20150917%2Fmp32275173_1442477519172_1_th.jpeg">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .litBox{
+            width: 400px;
+            height: 400px;
+            border: solid 1px #3059fa;
+            position: relative;
+            float: left;
+            cursor: move;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        .litBox .mask{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0,0,0,0.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        .bigBox{
+            width: 800px;
+            height: 800px;
+            position: relative;
+            float: left;
+            margin-left: 20px;
+            display: none;
+            overflow: hidden;
+        }
+        .bigBox img{
+            width: 1600px;
+            height: 1600px;
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="litBox">
+    <img src="http://www.sinaimg.cn/dy/slidenews/4_img/2017_02/704_2109187_352466.jpg" alt="">
+    <div class="mask"></div>
+</div>
+<div class="bigBox">
+    <img src="http://www.sinaimg.cn/dy/slidenews/4_img/2017_02/704_2109187_352466.jpg" alt="">
+</div>
+
+</body>
+</html>
+<script>
+    var litBox = document.getElementsByClassName('litBox')[0];
+    var mask = document.getElementsByClassName('mask')[0];
+    var bigBox = document.getElementsByClassName('bigBox')[0];
+    var img = bigBox.getElementsByTagName('img')[0];
+
+    litBox.onmouseenter = function (e) {
+        e = e || window.event;
+        bigBox.style.display = 'block';
+        mask.style.display = 'block';
+        this.n = mask.offsetWidth/bigBox.offsetWidth;
+    };
+    litBox.onmouseleave = function (e) {
+        e = e || window.event;
+        bigBox.style.display = 'none';
+        mask.style.display = 'none';
+    };
+    litBox.onmousemove = function (e) {
+        e = e || window.event;
+        var l = e.pageX - this.offsetLeft - mask.offsetWidth/2;
+        var t = e.pageY - this.offsetTop - mask.offsetHeight/2;
+        var maxl = this.clientWidth - mask.offsetWidth;
+        var maxT = this.clientHeight - mask.offsetHeight;
+        l = l > maxl ? maxl : ( l < 0 ? 0 : l);
+        t = t > maxT ? maxT : ( t < 0 ? 0 : t);
+        mask.style.left = l + 'px';
+        mask.style.top = t + 'px';
+        img.style.left = -l/this.n + 'px';
+        img.style.top = -t/this.n + 'px';
+    }
+
+</script>

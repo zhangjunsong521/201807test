@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+            position: relative;
+            left: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="div1"></div>
+
+</body>
+</html>
+<script src="utils.js"></script>
+<script src="animate1.js"></script>
+<script>
+    var oDiv = document.getElementById('div1');
+    window.myAnimate(oDiv,2000,{left:400,top:300,opacity:0.5},'easeInOut');
+
+</script>

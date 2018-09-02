@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            margin: auto;
+            width: 500px;
+            border-bottom: solid 1px #cccccc;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        ul li{
+            width: 100%;
+            border-bottom: solid 1px #cccccc;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        ul li:nth-child(2n){
+            background-color: blue;
+        }
+        ul li:nth-child(2n-1){
+            background-color: #00edff;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+
+</body>
+</html>
+<script>
+
+    var olis = document.getElementsByTagName('li');
+
+
+    //方法1
+    for (var i = 0; i < olis.length; i++) {
+        olis[i].qqq = i ;
+        olis[i].onclick = function () {
+            alert(this.qqq + 1)
+        }
+    }
+
+    //方法2
+    //当一个作用域有一个引用数据类型被外界占用，那么这个作用域就不销毁
+    //对应olis[n].onclick = xf0  来说  xf0  是函数体的存储地址；函数体是个引用数据类型
+    //那么就是说  这个自执行函数的作用域中自己产生一个引用数据类型 xf0 被li的onclick  占用
+    for (var i = 0; i < olis.length; i++) {
+        (function (n) {
+            olis[n].onclick = function () {
+                alert(n + 1)
+            }
+        })(i)
+    }
+
+    //方法3
+    for (var i = 0; i < olis.length; i++) {
+        olis[i].onclick = (function (n) {
+            return function () {
+                alert(n + 1)
+            }
+        })(i)
+    }
+
+    //方法4
+    for (let i = 0; i < olis.length; i++) {
+        olis[i].onclick = function () {
+            alert(i + 1)
+        }
+    }
+
+
+
+
+
+
+</script>

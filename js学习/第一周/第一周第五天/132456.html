@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .til{
+            width: 800px;
+            height: 50px;
+            border: 1px solid #ccc;
+            margin: auto;
+            box-sizing: border-box;
+            margin-top: 100px;
+        }
+        .til ul {
+            overflow: hidden;
+            display: flex;
+        }
+        .til ul li{
+            /*float: left;*/
+            flex: 1;
+            line-height: 50px;
+            /*width: 33%;*/
+            font-size: 30px;
+            text-align: center;
+        }
+        .til ul li.active{
+            background: #cccccc;
+            color: #161616;
+        }
+        .body{
+            margin: auto;
+            width: 800px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 60px;
+        }
+        .body ul {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .body ul li{
+            width: 100%;
+            height: 100%;
+            background: #cccccc;
+            display: none;
+        }
+        .body ul li.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="til">
+    <ul>
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</div>
+<div class="body">
+    <ul>
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    var til = document.getElementsByClassName('til')[0];
+    var tils = til.getElementsByTagName('li');
+
+    var body = document.getElementsByClassName('body')[0];
+    var bodys = body.getElementsByTagName('li');
+
+    function clearClass() {
+        for (var i = 0 ; i < tils.length ; i++){
+            tils[i].className='';
+            bodys[i].className = '';
+        }
+    }
+//    第一种方法
+//    for (var i = 0 ; i < tils.length ; i ++){
+//        tils[i].maIndex = i;
+//        tils[i].onclick = function () {
+//            clearClass();
+//            tils[this.maIndex].className = 'active';
+//            bodys[this.maIndex].className = 'active';
+//        }
+//    }
+//    第二种方法
+//    for (var i = 0 ; i < tils.length ; i ++){
+//        (function (n) {
+//            tils[n].onclick = function () {
+//                clearClass();
+//                tils[n].className = 'active';
+//                bodys[n].className = 'active';
+//            }
+//        })(i)
+//    }
+
+//    第三种方法
+//    for (var i = 0 ; i < tils.length ; i ++){
+//            tils[i].onclick =(function (n) {
+//                return function () {
+//                    clearClass();
+//                    tils[n].className = 'active';
+//                    bodys[n].className = 'active';
+//                }
+//            })(i)
+//    }
+
+//    第四种方法
+//        function tab(n) {
+//            return function () {
+//                clearClass();
+//                tils[n].className = 'active';
+//                bodys[n].className = 'active';
+//            }
+//         }
+//    for (var i = 0; i < tils.length; i++) {
+//        tils[i].onclick = tab(i)
+//    }
+
+    for (let i = 0; i < tils.length; i++) {
+        tils[i].onclick = function () {
+            clearClass();
+            tils[i].className = 'active';
+            bodys[i].className = 'active';
+        }
+    }
+
+
+</script>

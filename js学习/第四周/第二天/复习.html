@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+var ary = [1,2,2,3,6,6,3,6,5,6,4,4,5];
+//function unique(ary) {
+//    let obj = {};
+//    for (let i = 0; i < ary.length; i++) {
+//        if(obj.hasOwnProperty(ary[i])){
+//            ary.splice(i,1);
+//            i--;
+//        }else {
+//            obj[ary[i]] = ary[i]
+//        }
+//    }
+//    return ary
+//}
+//unique(ary);
+//console.log(ary);
+//Array.prototype.myunique = unique;
+
+
+Array.prototype.myunique = function () {
+    let obj = {};
+    for (let i = 0; i < this.length; i++) {
+        if(obj.hasOwnProperty(this[i])){
+            this.splice(i,1);
+            i--;
+        }else {
+            obj[this[i]] = this[i]
+        }
+    }
+    ary.sort(function (a,b) {
+        return a - b ;
+    });
+    return this;
+};
+ary.myunique();
+console.log(ary);
+
+
+//var arr = ary.reverse();
+//var arr = ary.reverse().pop();
+//var arr = ary.reverse().pop().push(12);
+//pop 返回的是一个数字，不是数组；而push是数组中的方法
+
+//    var arr = ary.myunique().pop();
+    //这种能通过连续打点的方式调用的形式，我们称为链式调用；
+    //实现链式调用的关键  是看返回值  是否仍然是该类的一个实例；
+    //若每个函数返回值都是this；那么我们就能实现连续的链式调用；
+
+    Array.prototype.myPop = function () {
+        this.length= this.length - 1;
+        return this
+    };
+    Array.prototype.myPush = function (m) {
+        this[this.length] = m;
+        return this
+    };
+    var arr2 = ary.myunique().myPush(12).myPush(13).myPop().myPush(15).myPop().myunique();
+    console.log(arr2);
+
+
+    Number.prototype.add = function (a) {
+        return this + a;
+    };
+    Number.prototype.minus = function (m) {
+        return this - m;
+    };
+    var per = 15 ;
+    console.log(per.add(12).minus(10));
+    console.log(per);
+
+
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon"
+          href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535200515034&di=c04f6ea475c752da90b0a9f50e929339&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20150917%2Fmp32275173_1442477519172_1_th.jpeg">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #3059fa;
+            border-radius: 50%;
+            cursor: move;
+            position: absolute;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script>
+    var oDiv = document.getElementById('div1');
+
+    class Drag{
+        constructor(ele){
+            this.cur = ele;
+            ele.onmousedown = this.dragStar.bind(this)
+        }
+        dragStar(e){
+            e = e || window.event;
+            e.preventDefault();
+            this.startX = this.cur.offsetLeft;
+            this.startY = this.cur.offsetTop;
+            this.mx = e.pageX;
+            this.my = e.pageY;
+            document.onmousemove = this.dragMove.bind(this);
+            document.onmouseup = this.dragEnd.bind(this);
+        }
+        dragMove(e){
+            e = e || window.event;
+            this.cur.style.left = e.pageX + this.startX - this.mx + 'px';
+            this.cur.style.top = e.pageY + this.startY - this.my + 'px';
+        }
+        dragEnd(){
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+    var obj = new Drag(oDiv);
+
+</script>

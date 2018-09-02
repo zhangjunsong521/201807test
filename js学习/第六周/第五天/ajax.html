@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('get','data.json');//第三个参数  不写  默认就是true  也就是异步执行
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState == 4 && xhr.status == 200 ){
+            data = xhr.responseText;
+        }
+    };
+    xhr.send();
+
+
+    window.onload = function () {
+        //页面所有内容  加载完成
+        console.log(data);
+    }
+
+</script>

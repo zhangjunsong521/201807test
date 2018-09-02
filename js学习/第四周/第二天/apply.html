@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+//    f1:apply(obj,xxx)       xxx  是个数组或者类数组
+//    类数组 ： arguments   元素集合
+//    虽然后面的参数是个数组或者类数组，但是传给前边的f1  时  他也是分开一项一项传过去的
+
+    function f1(n,m) {
+        console.log(this);
+        console.log(arguments);
+    }
+    var obj = {name:'zfpx'};
+    f1.apply(obj,[1,2,3,4,5,6]);
+    f1.call(obj,[1,2,3,4,5,6,7]);
+
+
+
+    function f2() {
+        console.log(2);
+    }
+    function f3() {
+        console.log(3);
+    }
+    f2.call(f3);
+    //f2  中的this  指向f3   让f2  执行
+    //怎么通过  call 的执行；  让  f2  执行
+    //call  执行时  里边的this  指向  f2
+    //让  this（）    也就是让f2  执行
+    //以上说的this  都是 call  中的this
+
+    //也就是把   call  中的this  中的this  改成f3 ； 然后让call 中的this（f2） 执行    ~~~~~不懂
+
+
+    f2.call.call(f3)
+    // fn.call(f3)     fn  中的this  换成  f3  让 fn  执行
+    // fn  f2.call     把f2。call  中的this  换成；让f2.call执行
+    //  f2。call   执行    call  中的this   （f3） 执行
+
+
+
+
+
+
+
+
+
+
+</script>

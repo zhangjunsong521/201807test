@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * 思路1：循环这个字符串，把这个字符串放到一个对象中；每次放的时候先去查看有没有这个属性，如果有的话，就给这个属性值+1；若没有，赋初始值为1
+     * */
+    str = 'asdarewafasdfdsafaefasfaf';
+    var obj = {};
+    for (let i = 0; i < str.length; i++) {
+        if(obj.hasOwnProperty(str[i])){
+            obj[str[i]] ++
+        }else {
+            obj[str[i]] = 1
+        }
+
+    }
+
+    var n = 1;
+    var str = '';
+    for(var k in obj){
+        if(obj[k] > n){
+            n = obj[k];
+            str = k
+        }
+    }
+
+
+    /*
+    * 思路2  把字符串  变成   aaaaaabbbbbbccccc
+    * 使用split分割成数组，给数组排序；然后在吧数组结合成字符串
+    * 然后在用正则  结合  replace方法求出最大值
+    * */
+    var str = 'asdarewafasdfdsafaefasfaf';
+    var temp = str.split('');
+    var arr = temp.sort(function (a,b) {
+        return a.localeCompare(b)
+    }).join('');
+    var obj = /(\w)\1*/g;
+    var arr1 = arr.match(obj);
+    arr1 = arr1.sort(function (a,b) {
+        return a.length - b.length
+    })
+
+
+    var str2 = str.split('').sort(function (a,b) {return a.localeCompare(b)}).join('');
+    var str2 = str.split('').sort().join('');
+
+    var arr = str2.match(/(\w)\1*/g);
+    arr = arr.sort((a,b)=>{return b.length - a.length});
+
+
+
+
+    /*
+    * 千分符
+    * */
+    var str = '12345678';
+    var reg = /(\d)(?=(\d{3})+$)/g;
+    str.replace(reg,'$1,')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

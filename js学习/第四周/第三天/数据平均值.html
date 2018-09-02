@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    var ary = [12,23,545,7678,34];
+    //去除一个最大值  去除一个最小值   然后求平均值
+    ary.sort((a,b) => {return a - b});
+    ary.shift();
+    ary.pop();
+    var num = eval(ary.join('+')/ary.length);
+    console.log(num.toFixed(2));   //toFixed  返回值是个字符串
+
+//    第一种思路   应用es6  的扩展运算符
+//    第二种思路   做一个空数组  把arguments中的数据放到数组里
+//    第三种思路   把arguments的 __protp__ 指向数组的原型
+    //思路四
+    //通过call或者apply让类数组利用数组的方法
+    function f(...arg) {
+        arg.sort((a,b)=>{return a-b});
+        arg.shift();
+        arg.pop();
+        return eval(arg.join('+'))/arg.length;
+    };
+
+    function f1(){
+        var ary=[];
+        for (var i = 0; i < arguments.length; i++) {
+            ary.push(arguments[i])
+        };
+        ary.sort((a,b)=>{return a-b});
+        ary.shift();
+        ary.pop();
+        return eval(ary.join('+'))/ary.length;
+    };
+
+    function f2(){
+        arguments.__proto__=Array.prototype;
+        //这一行，让arguments的__proto__从原来的Object.prototype指向Array.prototype
+        arguments.sort((a,b)=>{return a-b}).shift();
+        arguments.pop();
+        return eval(arguments.join('+'))/arguments.length
+    }
+
+    function f3() {
+        var ary=[].slice.call(arguments);
+        //利用数组的slice把arguments中的内容 复制一份到ary
+        ary.sort((a,b)=>{return a-b});
+        ary.shift();
+        ary.pop();
+        return eval(ary.join('+'))/ary.length;
+    }
+    var num=f(1,43,23,5,445,6,67,34);
+    console.log(num);
+
+    /*
+     * 类数组调用数组方法
+     * 先去通过数组找到对应的方法，然后用call先改变方法里面的this指向，然后再去让这个方法执行
+     * 有些方法可以用，但有些方法不能用
+     * 会改变原有数组的方法，也会改变arguments
+     * */
+
+    function f4() {
+        [].pop.call(arguments);
+        console.log(arguments);
+    }
+
+    /*
+    * 非数组这么调用数组的方法
+    * 先找到这个方法
+    * [].slice()    slice 中的this  是前面的空数组
+    * [].slice.call(obj)   通过call  把slice  中的this  换成  obj
+    * */
+
+
+
+
+</script>

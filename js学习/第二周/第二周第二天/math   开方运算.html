@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+<div>我</div>
+
+</body>
+</html>
+<script>
+
+//    Math.sqrt(4);   //开方运算
+//    Math.pow(2,3);  //平方运算
+//    Math.floor(2.9);  // 向下取整   作用等同于  parseInt  正数
+//    Math.ceil(2.1);   // 向上取整   作用等同于  parseInt  负数
+//    Math.abs(-2);     //  取绝对值
+//    Math.round();     //  四舍五入运算
+//    Math.random();    // 取0-1 的随机小数   包含0  不包含1
+//    Math.max(1,2,3,4,5,6,4);   //取一组数中的最大值
+//    Math.min(1,2,3,4,5,6,4);   //取一组数中的最小值
+//
+    function rem() {
+    var ary = [];
+    for (var i = 0; i < 4; i++) {
+        var n = Math.round(Math.random()*61);
+        if (ary.indexOf(n) == -1){
+            ary.push(n)
+        }else{
+            i--;  //若没有这个i--  则会出现个数不够四个的情况
+        }
+    }
+    return ary;
+}
+//    console.log(rem());
+    function getStr() {
+        var str2 = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789';
+        var str = '';
+        var ary = rem();
+        for (var i = 0; i < ary.length; i++) {
+            var n = ary[i];
+            str += str2[n];
+        }
+        return str;
+    }
+//console.log(getStr());
+    var oDiv = document.getElementsByTagName('div')[0];
+    oDiv.onclick = function () {
+        this.innerHTML = getStr();
+    }
+
+
+</script>

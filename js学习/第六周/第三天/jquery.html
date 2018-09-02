@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+
+</head>
+<body>
+
+
+</body>
+</html>
+<script src="jquery-3.3.1.js"></script>
+<script>
+
+    (function (global,factory) {
+        
+    })(typeof window != 'undefined'? window : this,function (window,noGlobal) {
+        var version = '3.3.1',
+            jQuery = function (selector, context) {
+                return new jQuery.fn.init( selector, context );
+            };
+            //把jQuery当做对象 加了一个  fn属性
+            //把原型指向换成后边的对象
+            jQuery.fn = jQuery.prototype = {
+                constructor : jQuery,
+                toArray:function() {
+                    return slice.call( this );
+                },
+            };
+            jQuery.extend = jQuery.fn.entend = function () {
+
+            }
+            /*
+            * extend JQ  的扩展功能
+            * jQuery.extend 扩展的内容是直接放到 jQuery上（把jQ当做对象）
+            * jQuery.fn.extend   扩展到jQuery 的原型对象上
+            * */
+    })
+
+
+
+</script>

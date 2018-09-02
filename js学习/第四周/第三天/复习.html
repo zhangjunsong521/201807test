@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+//    数组中的最大值和最小值
+//var ary = [12,34,5,56,76,898,90,345];
+
+//    1.先排序  然后在拿头和尾
+//    ary.sort(function (a,b) {
+//        return a - b;
+//    });
+//    var max = ary[ary.length-1],min = ary[0];
+//    2.假设法
+//    先假设第一个是最大值
+//    然后循环数组挨个比较
+
+//    function obj(ary) {
+//        let max = ary[0];
+//        for (let i = 0; i < ary.length; i++) {
+//            if(ary[i] > max){
+//                max = ary[i]
+//            }
+//        }
+//        return max;
+//    }
+//    console.log(obj(ary));
+
+
+    var ary = [12,34,5,56,76,898,90,345];
+
+//    var str = ary.toString();
+//    var max = eval('Math.max('+ str + ')');
+//    console.log(max);
+//
+//    var max = Math.max.apply(Math,ary)
+
+
+    var max = Math.max(...ary) ;  //   。。。  是  扩展运算符
+    console.log(max);
+
+
+    ary.sort(function (a,b) {
+        return a - b ;
+    });
+    ary.sort((a,b) => {
+        console.log(12);
+    });
+
+//    两个函数的区别
+//    箭头函数没有this；往上级作用域查找this
+//    箭头函数不能当做构造函数用
+
+
+    function f4() {
+        console.log(this);
+        var f3 = () => {
+            console.log(this);
+        };
+        var obj = {f:f3};
+        obj.f();
+    }
+    var obj2 = {f:f4};
+    obj2.f();
+
+
+    var Bind = function (...arg) {
+        var obj = arg[0];
+        arg.shift();
+        return (...arg2) => {
+            this.apply(obj,arg.concat(arg2))
+        }
+    }
+    Function.prototype.myBind = myBind;
+
+    function f1() {
+        console.log(this);
+        console.log(arguments);
+        console.log(a);
+    }
+    var obj = {name:zfpx};
+    var f2 = f1.myBind(obj,1,2,3);
+    f2();
+    console.log(f2);
+
+    var f3 = f1.bind(obj,1,2,3);
+    console.log(f3);
+
+
+</script>

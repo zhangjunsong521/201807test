@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .litBox,.bigBox{
+            width: 400px;
+            height: 400px;
+            border: 2px dashed darkorange;
+            position: relative;
+            float: left;
+            overflow: hidden;
+            cursor: move;
+        }
+        .litBox img{
+            width: 100%;
+            height: 100%;
+        }
+        .litBox .mask{
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            background: rgba(0,0,0,0.5);
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        .bigBox{
+            margin-left: 50px;
+            display: none;
+        }
+        .bigBox img{
+            width: 200%;
+            height: 200%;
+            position: absolute;
+        }
+    </style>
+
+</head>
+<body>
+<div id="div1">珠峰培训</div>
+<div class="litBox">
+    <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3026997908,653181402&fm=173&app=25&f=JPEG?w=500&h=500&s=EA9322C5CE525EC4C98410730300C050" alt="">
+    <div class="mask"></div>
+</div>
+<div class="bigBox">
+    <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3026997908,653181402&fm=173&app=25&f=JPEG?w=500&h=500&s=EA9322C5CE525EC4C98410730300C050" alt="">
+</div>
+</body>
+</html>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    /*
+     * 思路 两个盒子  一个盒子放大图片 另一个盒子放小图片
+     *     小盒子上边有个小蒙层，小蒙层/小图片 = 放大图片的盒子/大图片 = percent
+     *     小蒙层在小盒子上移动的距离， 大图片在盒子里边移动的距离的  percent；
+     *     移动方向 两者移动方向相反
+     * */
+
+    var $litBox = $('.litBox'),
+        $mask = $litBox.children('.mask'),
+        $bigBox = $('.bigBox'),
+        $bigImg = $bigBox.children('img');
+    $litBox.on('mouseenter',function () {
+        //滑过小盒子  要让  大盒子与小蒙层显示；
+        //$bigBox.css('display','block');
+        $bigBox.show();
+        $mask.show();
+        this.percent = this.clientWidth/$mask.width();//2
+    });
+    $litBox.on('mousemove',function (e) {
+        // e.page   鼠标到body  左上角的距离
+        // e.client 鼠标到浏览器可视区域左上角的距离
+        // 要获取鼠标到小盒子左上角的距离 == e.page - 小盒子的offset
+        var $this = $(this);
+        var obj = $this.offset();
+        var x = e.pageX - obj.left - $mask.width()/2,
+            y = e.pageY - obj.top - $mask.height()/2;
+        /*
+         * 边界判断
+         * */
+        var maxL = this.clientWidth - $mask.width(),
+            maxT = this.clientHeight - $mask.height();
+        x = x >= maxL ? maxL : (x <= 0 ? 0 : x);
+        y = y >= maxT ? maxT : (y <= 0 ? 0 : y);
+        $mask.css({left:x,top:y});
+        /*
+        * 大图动起来
+        * */
+        $bigImg.css({
+            left: -x*this.percent,
+            top: -y*this.percent,
+        })
+    });
+    $litBox.on('mouseleave',function () {
+        $bigBox.hide();
+        $mask.hide();
+    });
+
+
+
+
+
+
+
+
+
+
+
+</script>

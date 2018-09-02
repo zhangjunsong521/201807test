@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <script src="../第二天/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+<ul class="box">
+    <li>
+        <span>一级菜单1</span>
+        <ul>
+            <li>
+                <span>二级菜单21</span>
+                <ul>
+                    <li>
+                        <span>三级菜单31</span>
+                    </li>
+                    <li>
+                        <span>三级菜单32</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>二级菜单22</span>
+                <ul>
+                    <li>
+                        <span>三级菜单312</span>
+                    </li>
+                    <li>
+                        <span>三级菜单323</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span>一级菜单2</span>
+        <ul>
+            <li>
+                <span>二级菜单21</span>
+            </li>
+            <li>
+                <span>二级菜单22</span>
+                <ul>
+                    <li>
+                        <span>三级菜单312</span>
+                    </li>
+                    <li>
+                        <span>三级菜单323</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span>一级菜单3</span>
+        <ul>
+            <li>
+                <span>二级菜单31</span>
+            </li>
+            <li>
+                <span>二级菜单22</span>
+                <ul>
+                    <li>
+                        <span>三级菜单312</span>
+                    </li>
+                    <li>
+                        <span>三级菜单323</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+</body>
+</html>
+<script>
+
+    var box = document.getElementsByClassName('box')[0];
+    var span = document.getElementsByTagName('span');
+
+    [...span].forEach((item,index)=>{
+            var obj = item.nextElementSibling;
+            if(obj && obj.nodeName.toLowerCase() === 'ul'){
+                obj.style.display = 'none';
+            }
+    });
+    box.onclick = function (e) {
+        e = e  || window.event;
+        var tar = e.target || e.srcElement;
+        if(tar.nodeName.toLowerCase() === 'span'){
+            var oul = tar.nextElementSibling;
+            if(oul && oul.nodeName.toLowerCase() === 'ul'){
+                if(oul.style.display == 'none'){
+                    oul.style.display = 'block';
+                } else {
+                    oul.style.display = 'none';
+                    var str = oul.querySelectorAll('ul');
+                    [...str].forEach((item,index)=>{
+                        item.style.display = 'none';
+                    })
+                 }
+            }
+        }
+    }
+
+
+</script>

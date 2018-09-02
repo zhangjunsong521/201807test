@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 200px;
+            list-style: none;
+            float: left;
+            border: solid 1px #333;
+            margin-left: 10px;
+            margin-top: 100px;
+        }
+        ul{
+            width: 1000px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<ul id="lis">
+
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+</body>
+</html>
+<script>
+    var lisId = document.getElementById('lis'),
+        lisLi = lisId.getElementsByTagName('li');
+    for (var i = 0; i < lisLi.length; i++) {
+        if (i%2 == 0 ){
+            lisLi[i].style.background = '#d7000b'
+        }else {
+            lisLi[i].style.background = '#01ee00'
+        }
+    }
+    var col = '';
+    for (var i = 0; i < lisLi.length; i++) {
+        lisLi[i].onmouseover = function () {
+            col = this.style.background;
+            this.style.background = '#e73fbb'
+        };
+        lisLi[i].onmouseout = function () {
+            this.style.background = col ;
+        }
+    }
+    for (var i = 0; i < lisLi.length; i++) {
+        lisLi[i].mybg  = i ;
+        lisLi[i].onclick = function () {
+            alert('我是第'+ (this.mybg+1) + '个li')
+        }
+    }
+
+
+</script>

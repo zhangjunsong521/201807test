@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+<div id="div">wo </div>
+
+</body>
+</html>
+<script>
+
+        var now = new Date();//  拿到的是电脑的本机时间
+        console.log(now);
+
+        var year = now.getFullYear();  //拿到现在的年份
+        console.log(year);
+        var month = now.getMonth();  //获取月份:跟正常的月份差1  ；  6 月 代表 7 月
+        console.log(month);
+        var date = now.getDate() ; // 获取几号
+        console.log(date);
+        var day = now.getDay();  //  获取星期几    0代表周日
+        console.log(day);
+        var hour = now.getHours(); // 获取小时  24小时制
+        console.log(hour);
+        var minutes = now.getMinutes();//获取分
+        console.log(minutes);
+        var second = now.getSeconds();//获取秒
+        console.log(second);
+        var millisecound = now.getMilliseconds(); // 获取毫秒
+        console.log(millisecound);
+        var time = now.getTime();  //获取当前时间距离1970-0-0 0:0:0 的毫秒数
+        console.log(time);
+    var oDiv = document.getElementById('div');
+    function getTime() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var date = now.getDate();
+        var hour = now.getHours()< 10 ? '0'+ now.getHours():now.getHours();
+        var minutes = now.getMinutes()< 10 ? '0'+ now.getMinutes():now.getMinutes();
+        var second = now.getSeconds()< 10 ? '0'+ now.getSeconds():now.getSeconds();
+        var day = now.getDay();
+        var weekObj = {
+            0: '天',
+            1: '一',
+            2: '二',
+            3: '三',
+            4: '四',
+            5: '五',
+            6: '六',
+        };
+        var ary = ['天','一','二','三','四','五','六'];
+
+        var star = `今天是${year}年${month}月${date}日 星期${ary[day]} ${hour}：${minutes}：${second}`;
+        oDiv.innerHTML = star ;
+    }
+    oDiv.onclick = function () {
+        getTime()
+    }
+
+
+
+
+</script>

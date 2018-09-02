@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+//    var aty = [1,2,3];
+//    var [a,b,c] = ary;
+//    console.log(a,b,c);  // 1 2 3
+//    var [a,,b] = ary;
+//    console.log(a,b);   // 1 3
+
+    /*
+    * 数组的解构赋值 ： 按照对应的位置去赋值的,若数组没有与之对应的值；则给变量一个默认的undefined
+    * */
+
+    var arr = [1,2,3,4];
+    var [a,,,b,d] = arr;
+    console.log(a, b, d);// 1 4 undefined
+
+    var x = 12 ;
+    var y = 14 ;
+    var [x,y] = [y,x];
+    console.log(x, y);  //  14 12
+
+</script>

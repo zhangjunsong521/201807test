@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+
+    //两项两项的比较，如果后一项比前一项大则不交换顺序，否则两者交换顺序
+
+//    function emp(arys) {
+//        for (var i = 0; i < arys.length-1; i++) {
+//            for (var n = 0; n < arys.length-1-i; n++) {
+//                var temp = arys[n];
+//                if (arys[n]>arys[n+1]){
+//                    arys[n]=arys[n+1];
+//                    arys[n+1]=temp;
+//                }
+//            }
+//        }
+//        return arys ;
+//    }
+//    console.log(emp(ary));
+//    var ary = [2,4,1,32,62,26,49,78,14,144];
+//    //求和
+//    function sum(n) {
+//        var t = 0 ;
+//        for (var i = 0; i <= n; i++) {
+//            t += i ;
+//        }
+//        return t ;
+//    }
+//    var t1 = sum(10);
+//    console.log(t1);
+
+    //递归
+//    function sum(m) {
+//        if ( m <= 0 ){
+//            return 0;
+//        }else {
+//            return m + sum(m - 1)
+//        }
+//    }
+//    console.log(sum(10));
+//
+//    function sum(m) {
+//        if ( m > 0 ){
+//            return m + sum(m - 1)
+//        }else {
+//            return 0;
+//        }
+//    }
+//    console.log(sum(10));
+//    function sum(n) {
+//            if (n <= 0 ){
+//                return 0
+//            }
+//            if(n%2==0 || n%3==0){
+//                    return n + sum(n-1)
+//                }else {
+//                    return 0 + sum(n-1) ;
+//                }
+//    }
+//    var res = sum(6);
+//    console.log(res);
+
+//    function quickSort(ary) {
+//        if(ary.length <= 1){
+//            return ary;
+//        }
+//        var n = parseInt(ary.length/2);
+//        var temp = ary.splice(n,1)[0];
+//        var left = [],
+//            right = [];
+//        for (var i = 0; i < ary.length; i++) {
+//            if(ary[i] <= temp){
+//                left.push(ary[i])
+//            }else {
+//                right.push(ary[i])
+//            }
+//        }
+//        return quickSort(left).concat(temp,quickSort(right))
+//    }
+//    var ary = [1,5,4,2,3,9,6,2];
+//    var res = quickSort(ary);
+//    console.log(res);
+//    function fn(ary) {
+//        if (ary.length <= 1 ){
+//        return ary;
+//    }
+//        var n = parseInt(ary.length/2),
+//            temp = ary.splice(n,1)[0],
+//            left = [],
+//            right = [];
+//
+//        for (var i = 0; i < ary.length; i++) {
+//            if(ary[i] <= temp){
+//                left.push(ary[i])
+//            }else {
+//                right.push(ary[i])
+//            }
+//        }
+//        return fn(left).concat(temp,fn(right));
+//    }
+//
+//    var ary1 = [4,1,3,2,7,9,8,4];
+//    console.log(fn(ary1));
+
+</script>

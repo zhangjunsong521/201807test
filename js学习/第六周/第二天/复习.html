@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        body{
+            position: relative;
+        }
+        #div1{
+            height: 2000px;
+            background: linear-gradient(#00deff,#3059fa,red);
+        }
+        .btn{
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            line-height: 100px; 
+            text-align: center;
+            border-radius: 50%;
+            background: #f6ff00;
+            display: none;
+        }
+    </style>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+<div id="div1"></div>
+<div class="btn">上去</div>
+
+</body>
+</html>
+<script>
+
+    var btn = utils.getByClass('btn')[0];
+    /*
+    * 按固定时间  回到顶部
+    * */
+
+    var timer = null;
+//    function toTop() {
+//        if(timer != null)return;
+//        var duration = 1000;//总时间
+//        var interval = 20;//定时器执行的间隔时间
+//        var times = 0;//已经运动的时间
+//        var changeL = utils.scrollT();//要运动的总距离
+//        var step = changeL/duration*interval;//每20毫秒运动的距离
+//        var timer = window.setInterval(function () {
+//            //让  页面  scrollTop  减少
+//            changeL -= step;
+//            if(changeL <= 0 ){
+//                clearInterval(timer);
+//                timer = null;
+//                changeL = 0;
+//            }
+//            document.documentElement.scrollTop = changeL;
+//            document.body.scrollTop = changeL;
+//        },interval)
+//    }
+//    btn.onclick = toTop;
+    function toTop() {
+        if (timer != null)return;
+        var duration = 1000;//总时间
+        var interval = 20;//定时器执行的间隔时间
+        var times = 0;//已经运动的时间
+        var changeL = utils.scrollT();//要运动的总距离
+        var step = changeL/duration*interval;//每20毫秒运动的距离
+//        window.onscroll = null;
+        var timer = window.setInterval(function () {
+            //让  页面  scrollTop  减少
+//            changeL = utils.scrollT();
+            changeL -= step;
+            if(changeL <= 0 ){
+                clearInterval(timer);
+                timer = null;
+                changeL = 0;
+            }
+            document.documentElement.scrollTop = changeL;
+            document.body.scrollTop = changeL;
+        },interval)
+    }
+    btn.onclick = toTop;
+    window.onscroll = btnDis;
+    function btnDis() {
+        var scrT = utils.scrollT();
+        var cliH = utils.clientH();
+        if (scrT > cliH){
+            btn.style.display = 'block';
+        }else {
+            btn.style.display = 'none'
+        }
+    }
+    window.onmousewheel = function () {
+        clearInterval(timer);
+        timer = null
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>

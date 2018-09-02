@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: #3059fa;
+            position: relative;
+        }
+        
+    </style>
+    <script src="utils.js"></script>
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>
+<script>
+    var oDiv = document.getElementById('div1');
+    document.onkeydown = function (e) {
+        e = e || window.event;
+        console.log(e.keyCode); //记录的是键盘对应的键值码
+        switch (e.keyCode){
+            case 37:
+                oDiv.style.left = utils.css(oDiv,'left') - 100 + 'px';
+                break;
+            case 38:
+                oDiv.style.top = utils.css(oDiv,'top') - 100 + 'px';
+                break;
+            case 39:
+                oDiv.style.left = utils.css(oDiv,'left') + 100 + 'px';
+                break;
+            case 40:
+                oDiv.style.top = utils.css(oDiv,'top') + 100 + 'px';
+                break;
+        }
+    }
+    
+    
+    
+</script>

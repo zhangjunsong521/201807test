@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <script src="utils.js"></script>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #3059fa;
+            position: relative;
+            left: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="div1"></div>
+</body>
+</html>
+<script>
+
+
+    var oDiv = document.getElementById('div1');
+    function move(ele,duration,attr,tar) {
+        // var changeL = 400;//总的运动距离 = 目标值 - 初始值
+        var beginL = utils.css(ele,attr);
+        var changeL = tar - beginL;
+        var times = 0;
+        var speed = changeL/duration;
+        var timer = setInterval(function () {
+            times += 20;
+            if(times >= duration){
+                clearInterval(timer);
+                times = duration;
+            }
+            //times*speed  运动距离
+            // 当前位置  = 运动距离 + 初始值
+            var curPos = linear(times,changeL,duration,beginL);
+//            ele.style[attr] = curPos + 'px';
+            utils.setCss(ele,attr,curPos);
+        },20);
+    }
+    function linear(time,changeL,duration,beginL) {
+        return changeL/duration*time + beginL;
+    }
+    function move2(ele,duration,obj) {
+        var beginL = {};
+        var changeL = {};
+        for (var k in obj ){
+            if(obj.hasOwnProperty(k)){
+                beginL[k] = utils.css(ele,k);
+                changeL[k] = obj[k] - beginL[k];
+            }
+        }
+        var times = 0;
+        var timer = setInterval(function () {
+            times += 20;
+            if(times >= duration){
+                clearInterval(timer);
+                times = duration;
+            }
+            for (var k in obj){
+                if(obj.hasOwnProperty(k)){
+                    var curPos = linear(times,changeL[k],duration,beginL[k]);
+                    utils.setCss(ele,k,curPos)
+                }
+            }
+        },20)
+
+    }
+    move2(oDiv,2000,{left:300,top:300,opacity:0.5})
+
+
+
+
+
+
+
+
+
+
+</script>

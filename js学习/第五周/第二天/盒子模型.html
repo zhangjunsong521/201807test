@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        /*#div1{*/
+        /*height: 2000px;*/
+        /*background-color: #f4f4f4;*/
+        /*}*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            padding: 20px;
+            border: 10px solid red;
+            margin: auto;
+            background-color: #24ccc8;
+        }
+        #center{
+            position: relative;
+            width: 350px;
+            height: 350px;
+            padding: 10px;
+            margin: auto;
+            border: 10px solid salmon;
+            background-color: palegoldenrod;
+        }
+        #inner{
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            margin: auto;
+            border: 10px solid #3059fa;
+            background-color: #ee2ad6;
+        }
+    </style>
+
+</head>
+<body>
+<div id="div1">珠峰培训</div>
+<div id="outer">
+    outer
+    <div id="center">center
+        <div id="inner">inner</div>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * JS  盒子模型
+    *
+    * client
+    * offset
+    * scroll
+    * */
+
+//    clientWidth  盒子宽度+左右padding
+//    clientHeight  盒子高度+上下padding
+//    clientLeft  盒子左边框的宽度
+//    clientTop  盒子上边框的宽度
+//    var oDiv = document.getElementById('div1');
+//    console.log(oDiv.clientWidth);
+//    console.log(oDiv.clientLeft);
+
+    //offsetWidth    clientWidth + 左右border
+    //offsetHeight    clientWidth + 上下border
+    //offsetTop    元素距离上级参照物的top值
+    //offsetLeft   元素距离上级参照物的left值  外边框到父级的内边框的距离
+    //offsetParent   上级参照物
+    //在table标签中需要注意特殊情况  td  的offsetParent  是table
+    //td里边的标签的  offsetParent  是td
+//    console.log(oDiv.offsetWidth);
+
+    /*
+    * 结合client  和  offset   我们可以求出  元素的右边框的宽度  和  下边框的宽度
+    * clientRight = oDiv.offsetWidth - oDiv.clientWidth - oDiv.clientLeft
+    * */
+
+
+    /*
+    * scroll
+    *
+    *
+    * scrollWidth
+    * 当元素内容没有溢出时结果是等同于  clientWidth
+    * 当元素内容溢出时   结果是  左padding + 内容的高度
+    * 设置了overflow   则结果是  左右padding  +  内容的高度
+    *
+    *
+    * scrollHeight
+    * scrollTop    卷上去的高度
+    * scrollLeft   卷上去的宽度
+    * */
+
+
+    /*
+    * 13个属性  除了  offsetParent  其他的属性值都是数字
+    * 其中只有scrllTop  和  scrollLeft     是可以修改的
+    * 其他的只读
+    * */
+
+    //监视可视窗口的高度
+    window.onresize = function () {
+        console.log(document.doucumentElement.clientHeight || document.body.clientHeight);
+    };
+
+
+
+//    var innerr = inner.offsetLeft + center.clientLeft + center.offsetLeft + outer.clientLeft + outer.offsetLeft
+//
+//    console.log(innerr);
+
+
+//    function offset(ele) {
+//        var temp = ele.offsetParent;//用 temp 去存储上级参照物
+//        var l = ele.offsetLeft;//先保存元素外边框到上级参照物的内边框的距离
+//        var t = ele.offsetTop;
+//        while (temp && temp.nodeName != 'BODY'){
+////  判断上级参照物是不是存在，不存在的话说明  ele  就是body；如果存在，并且不是body  就接着向上累加  offset值
+//            l += temp.offsetLeft + temp.clientLeft;
+//            t += temp.offsetTop + temp.clientTop;
+//            temp = temp.offsetParent;
+//        }
+//        return   {
+//            top:t,
+//            left:l
+//        };
+//    }
+//    console.log(offset(inner));
+
+
+</script>

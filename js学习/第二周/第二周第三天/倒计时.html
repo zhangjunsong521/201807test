@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+<div id="div"></div>
+</body>
+</html>
+<script>
+    var tar = new Date('2018-7-19 16:45:00');
+    var tarT = tar.getTime();//当前时间距离1970年的毫秒数
+    function timeCount(tarT) {
+        var now = new Date();   //获取当前时间
+        var nowT = now.getTime();//当前时间距离1970年的毫秒数
+        var time = tarT - nowT  ;//咱们剩余的时间差   毫秒数
+        if (time < 0){
+            clearInterval(timer);
+            time = 0 ;
+        }
+        //1h : 60 * 60 * 1000
+        //1m :  60 * 1000
+        //1s :  1000
+//    var h = time/3600000   //获取小时  几点几小时
+        var h = Math.floor(time/3600000);   //获取小时  向下取整
+        time = time - h*3600000 ;  // 刨去小时  剩余毫秒数   也就是分钟和秒站的毫秒数
+        var m = Math.floor(time/60000);
+        time = time - m*60000;  //  刨去分钟   剩余的毫秒数
+        var s = Math.floor(time/1000);
+
+        var str = `距离考试还剩 ${h < 10 ? '0' + h : h }:${m < 10 ? '0' + m : m }:${s < 10 ? '0' + s : s}`;
+        var oDiv = document.getElementById('div');
+        oDiv.innerHTML = str ;
+    }
+    var timer = window.setInterval(function () {
+        timeCount(tarT)
+    },1000)
+</script>

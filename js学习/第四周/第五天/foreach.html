@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+
+    /*
+    * 循环数组的两个办法
+    *
+    * forEach  必须以函数作为参数
+    * map
+    * */
+
+//    let ary = [12,23,14,151,16]
+//    var a = ary.forEach(function (item,index) {
+//        console.log(item, index);
+//        //item 是数组中的项
+//        //index 是对应的索引
+//        //forEach   没有返回值
+//        //不改变原有数组
+//        //item = 0;
+//        //ary [index] = 0
+//        console.log(arguments);
+//    });
+//    var b = ary.forEach((item,index) => {
+////        console.log(item, index);
+//    });
+//    console.log(a);
+//    console.log(ary);
+
+//    var  ary = [1,2,3,4,5,6,7,8,9];
+//    /*
+//    * 用forEach  求数组的和
+//    * */
+//    var total = 0;
+//    ary.forEach(function (item, index) {
+//        total += item;
+//    })
+
+    /*
+    * map
+    * */
+
+    var  ary = [1,2,3,4,5,6,7,8,9];
+    var c = ary.map(function (item,index) {
+        console.log(item, index);
+        console.log(arguments);
+        return 12;
+    });
+    console.log(c,ary);
+
+    /*
+    * map 有返回值   返回值是由回调函数内的  return确定的   没有return 默认返回undefined  组成的数组
+    * */
+
+
+
+
+</script>

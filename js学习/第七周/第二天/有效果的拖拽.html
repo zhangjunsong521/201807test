@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: sandybrown;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 50%;
+            user-select: none;
+            cursor: move;
+            position: relative;
+        }
+    </style>
+
+</head>
+<body>
+<div id="div1">珠峰培训</div>
+</body>
+</html>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    var $oDiv = $('#div1');
+    $oDiv.on('mousedown',function (ev) {
+        dragStart.call(this,ev);
+        this.DragMove = dragMove.bind(this);
+        this.DragEnd = dragEnd.bind(this);
+        $(document).on('mousemove',this.DragMove);
+        $(document).on('mouseup',this.DragEnd);
+    });
+    function dragStart(e) {
+        this.startX = this.offsetLeft;
+        this.startY = this.offsetTop;
+        this.mx = e.clientX;
+        this.my = e.clientY;
+
+    }
+    function dragMove(e) {
+        var x = e.clientX - this.mx,
+            y = e.clientY - this.my;
+        $(this).css({
+            left:this.startX + x,
+            top: this.startY + y
+        });
+        //要求出初始速度
+        if(!this.prevX){
+            this.prevX = 0;
+        }
+        this.speed = e.clientX - this.prevX;//两次move之间的时间差当做单位时间
+        this.prevX = e.clientX;
+    }
+    function dragEnd(e) {
+        $(document).off('mousemove');
+        $(document).off('mouseup');
+        this.maxL = (document.documentElement.clientWidth || document.body.clientWidth) - this.offsetWidth;
+        fly.call(this);
+    }
+
+    //左右弹性动画
+    function fly() {
+        var $this = $(this);
+        this.speed *= 0.98; //初始速度
+        var l = $this.offset().left + this.speed;
+        //边界问题
+
+        if(l > this.maxL){
+            this.speed *= -1;
+            l = this.maxL;
+        }
+        if(l < 0 ){
+            this.speed*= -1;
+            l = 0 ;
+        }
+
+        $this.css({left:l});
+        this.flyTimer = setTimeout(fly.bind(this),30);
+        if(Math.abs(this.speed) < 0.01){
+            clearTimeout(this.flyTimer)
+        }
+    }
+
+</script>

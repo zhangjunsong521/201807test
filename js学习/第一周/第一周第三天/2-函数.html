@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+
+    var total = null;
+    total = 2*5+5;
+    console.log(total);
+    function aa() {
+        total = 2*5+5;
+        console.log(total);
+    }
+    for (var i = 0 ; i <10; i ++){
+        aa();
+    }
+    //我们要用函数的原因
+    //1.节省代码
+    //2.高内聚（吧东西缩到一块，这一块就是为了实现某个功能，跟其他代码没有任何联系）低耦合（跟其他的代码没关联）
+
+    //函数的语法
+    /*
+    * function 函数名(){
+    *     函数体
+    * }
+    *
+    * var  函数名 = function  [ 函数名-可写可不写]（）{
+    *     函数体
+    * }
+    *
+    * */
+
+    //第一种声明方式，我们在声明的代码之前调用这个函数
+    //第二种声明方式，我们只能在声明的代码之后调用
+    //函数声明之后  可以无限次使用
+    //return   返回的意思
+    //clearRoom();//函数的调用    函数名()
+    function clearRoom() {
+        console.log('收拾桌子');
+        console.log('收拾卧室');
+        console.log('出门');return 'www';
+    }
+    console.log(clearRoom());
+    var clearPer = function () {
+        console.log('收拾桌子');
+        console.log('收拾卧室');
+        console.log('出门');
+
+    };
+    clearPer();
+
+
+    /*
+    * 函数的声明   （2种）
+    * 函数的执行    函数名
+    * 函数的返回值     return   后边的代码不在执行  跟for种的break 和continue  类似
+    * 函数的形参       听指令的功能
+    * 函数的实参      说指令
+    *
+    * arguments      实参集合
+    *
+    * this     函数的执行主体   （谁调用的这个函数）
+    *
+    * */
+
+    function sum2() {
+        console.log(arguments);
+        var total = 0 ;
+        for (var i = 0 ; i < arguments.length ; i++){
+            total +=arguments[i]
+        } return total;
+    }
+    console.log(sum2(1, 2, 3, 4));
+
+</script>

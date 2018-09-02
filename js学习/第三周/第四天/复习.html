@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+//    隐式数据类型转化
+//    只要碰见字符串就变成了字符串的拼接
+//    ！  取反，先把后边的内容转成布尔类型；然后在去取反
+//    -  1 - ‘a’ ;先把两边用Numeber 转换；然后在进行运算（- * % / ）
+//    isNaN（xx）   先把参数转成number ；然后在去判断
+//    if（条件)  把条件转成  布尔  ；在去判断
+//    不同数据类型比较
+
+
+
+
+
+
+
+    //查他的哥哥节点
+    function getBigBrother(ele) {
+        var temp = ele.previousSibling;
+        while (temp && temp.nodeType == -1){
+            temp = temp.previousSibling;
+        }
+        return temp ;
+    }
+    //查找oDiv3 的哥哥节点有几个   输出来是oDiv3在哥哥节点的索引
+    var oDiv3 = document.getElementById('div3');
+    function getEleIndex(ele) {
+//        var ary = [] ; //有几个哥哥   ele的索引就是几
+        var n = 0 ;
+        var temp = getBigBrother(ele);
+        while (temp){
+//            ary.push(temp);
+            n ++ ;
+            temp = getBigBrother(temp);
+        }
+//        return ary.length;
+        return n ;
+    }
+    getEleIndex(oDiv3);
+
+
+   function a() {
+       console.log(1);
+   };
+   function c() {
+       console.log(2);
+   };
+(function (b) {
+    b();c();
+    var b = c= function a() {
+        console.log(3);
+    }
+    function b() {
+        console.log(4);
+    }
+    b()
+})(a);
+c()
+
+
+
+
+
+
+
+
+
+</script>

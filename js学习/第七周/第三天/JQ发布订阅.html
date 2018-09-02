@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    var $start = $.Callbacks();//产生一个事件池
+    var $move = $.Callbacks();//产生一个事件池
+    var $end = $.Callbacks();//产生一个事件池
+
+    function f1() {
+        console.log(1);
+    }
+    function f2() {
+        console.log(2);
+    }
+    function f3() {
+        console.log(3);
+    }
+
+    $start.add(f1);
+    $start.add(f2);
+    $start.add(f3);
+
+    $start.fire();
+    $start.remove(f2);
+    $start.fire();
+
+
+
+
+
+
+
+
+
+
+</script>

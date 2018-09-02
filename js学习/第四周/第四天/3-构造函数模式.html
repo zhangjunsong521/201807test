@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    /*
+    * 类                                                   实例
+    * 人类                                                 张三  李四  。。。
+    * Array(数组类)                                     每一个数组都是他的一个实例
+    * Object（对象类）                                  每一个普通对象都是他的一个实例
+    * Function（函数类）                               每一个函数都是他的一个实例
+    * String（字符串类）                                每一个普通字符串都是他的一个实例
+    * 。。。
+    *
+    * JS  中的内置类
+    * */
+
+    /*
+    * 构造函数：
+    * 就是一个普通函数，只通过new  去执行了
+    * */
+
+    function Person(name,age) {
+        var sex = 'nan';
+        this.name = name;
+        this.age = age;
+    }
+    //普通函数的执行过程
+    //1、开辟一个私有作用域
+    //2、形参赋值，变量提升
+    //3、代码从上到下执行
+    //4、如有return则返回return的内容，若没有return贼默认返回undefined
+
+    var per = Person('小红',18);    //  undifined
+
+
+    //通过  new  执行一个函数时的过程
+    //1、开辟一个私有作用域
+    //2、形参赋值，变量提升
+    //3、开辟一个  堆内存   然后把函数中的this  指向  开辟的这个堆内存
+    //4、代码从上至下执行
+    //5、若没有return   则默认吧刚才创建的堆内存地址返回；若有，但是是个值类型，则依然返回创建的堆内存地址；若  手动return  一个引用数据类型；则会吧  默认的  return  改成手写的这个   引用数据类型的地址；
+    var per2 =new Person('小红',18);
+    console.log(typeof per2, per2);
+    //Person  是per2 的所属类     per2是  Person  类的  一个  实例
+    //通过new 执行的函数   我们把这个函数称为一个定义类，把new  执行返回的结果称为自定义类的一个实例
+
+    var ary = new Array(1,2,3,4,5)
+    //Array  是ary 的所属类     ary是  Array  类的  一个  实例   Array也是一个构造函数
+
+
+</script>

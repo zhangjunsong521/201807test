@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        #div1{
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            background-color: #3059fa;
+            cursor: pointer;
+        }
+        #inp{
+            display: block;
+            margin: auto;
+            width: 300px;
+            height: 20px;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="div1"></div>
+<input type="text" id="inp" placeholder="这是个啥">
+<!--<textarea name="" id="" cols="30" rows="10"></textarea>-->
+
+</body>
+</html>
+<script>
+    var oDiv = document.getElementById('div1');
+    var inp = document.getElementById('inp');
+    /*
+    * 事件：系统天生自带的，跟绑定与否没关系；
+    * JS 中的常用事件
+    * 鼠标的常用事件
+    *    onclick
+    *    ondblclick  大约300 毫秒内连续点击两次
+    *    onmouseover 鼠标滑过
+    *    onmouseout 鼠标移出
+    *    onmouseleave 鼠标离开
+    *    onmousemove  鼠标滑动
+    *    onmousedown  鼠标按下
+    *    onmouseup    鼠标松开
+    *    onmousewheel  鼠标滚轮事件
+    *
+    * 键盘的常用事件
+    *    onkeydown   键盘按下
+    *    onkeyup     键盘松开
+    *    onkeypress  键盘按下（有的键不能用）
+    *
+    * input框的常用事件
+    *    onfocus   获取焦点
+    *    onblur    失去焦点
+    *    onchange  监听内容变化（内容改变并且失去焦点才能触发）
+    *    oninput   监听内容变化
+    *
+    * input的值输入  是在  keydown之后   keyup之前做的
+    *
+    * 系统事件
+    * window.onload  页面资源加载完毕（包含图片，不含ajax）
+    * window.onscroll  滚动条滚动
+    * window.onresize  可视窗口大小发生改变
+    * $(document).ready    JQ的事件  DOM树加载完毕
+    *
+    * 移动端事件
+    * ontouchstart  触碰开始
+    * ontouchmove   按下后滑动
+    * ontouchend    触碰结束
+    * onclick     有个大概300毫秒的延迟
+    * */
+//    oDiv.ondblclick = function () {
+//        alert(1);
+//    };
+//    oDiv.onmouseover = function () {
+//        oDiv.style.background = '#cccccc';
+//    };
+//    oDiv.onmousemove = function () {
+//        console.log(2);
+//    };
+//    oDiv.onmouseout = function () {
+//        oDiv.style.background = '#3059fa';
+//    };
+
+//    document.onkeydown = function () {
+//        console.log('keydown');
+//    };
+//    document.onkeyup = function () {
+//        console.log('keyup');
+//    }
+//    document.onkeypress = function () {
+//        console.log('keypress');
+//    }
+
+    inp.onfocus = function () {
+        console.log(1);
+
+    };
+    inp.onblur = function () {
+        console.log('blur');
+    };
+    inp.oncnange = function () {
+        console.log('blur');
+    };
+    inp.onblur = function () {
+        console.log('blur');
+    }
+    inp.onkeyup = function () {
+        this.value = this.value.replace(/\D+/g,'')
+    }
+
+
+
+
+
+
+</script>

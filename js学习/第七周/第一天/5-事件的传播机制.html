@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+
+    </style>
+
+</head>
+<body>
+
+<div id="outer">outer
+    <div id="center">center
+        <div id="inner">inner</div>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    /*
+    * 事件的传播机制  分为两个阶段
+    * 第一个阶段是  捕获阶段
+    * 第二个阶段是  冒泡阶段
+    *
+    * DOM 0级事件；  执行是在冒泡阶段执行的
+    * */
+//    var outer = document.getElementById('outer');
+//    var center = document.getElementById('center');
+//    var inner = document.getElementById('inner');
+//    outer.onclick = function () {
+//        console.log('outer');
+//    };
+//    center.onclick = function () {
+//        console.log('center');
+//    };
+//    inner.onclick = function () {
+//        e = e || window.event;
+//        var tar = e.target || e.srcElement;
+//        e.stopPropagation();
+//        e.cancelBubble = true;
+//        /*
+//        * 取消冒泡传播
+//        * e.stopPropagation ？e.stopPropagation() ：e.cancelBubble = true;
+//        * */
+//        console.log('inner');
+//    };
+//
+//
+//    $('#outer').on('click',function (e) {
+//        console.log(e.target);
+//        console.log(arguments);
+//    })
+
+
+    // mouseenter  是在捕获阶段触发  mouseover  是在冒泡阶段触发
+
+
+
+</script>

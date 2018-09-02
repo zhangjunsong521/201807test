@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+<div class="div">haha</div>
+
+</body>
+</html>
+<script>
+
+    var oDiv = document.getElementsByClassName('div')[0];
+    var div1 = document.createElement('div');
+    //给创造的div  中添加一个span标签  标签的内容是  。。。。
+    div1.innerHTML = '<span>珠峰</span>';
+    div1.className = 'myDiv';
+    document.body.appendChild(div1)  ; //在后面添加
+    //父节点。insertBefore
+//    document.body.insertBefore(div1,oDiv);
+    //当页面上已经有某个元素时，不管是通过appendChild还是insertBefore操作，都不会新增该元素，只是改变该元素的位置
+    //父节点  removeChild  （oDiv） 从父节点中删除指定元素
+//    document.body.removeChild(div1);
+
+    //父节点。repaceChild(a,b)   用a   代替  b
+//    document.body.replaceChild(div1,oDiv);
+
+//    cloneNode()   参数为true  是  子孙全部拷贝   不传参只拷贝他自己
+
+    var oDiv2 = oDiv.cloneNode();
+
+    oDiv.qqq = 'ajskdfjala' ;   // 自定义属性
+    oDiv.setAttribute('myID','qqq')  ; //设置元素的行内属性  （属性名，属性值)
+    oDiv.getAttribute('myID')  ;  //获取元素的行内属性    （属性名）
+
+
+</script>

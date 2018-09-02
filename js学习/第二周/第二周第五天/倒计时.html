@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+<div id="div1">时间</div>
+
+</body>
+</html>
+<script>
+
+    var tar = new Date('2018/7/22 18:30:00').getTime();
+    function obj() {
+        var now = new Date().getTime();
+        var time = tar - now;
+        if (time < 0 ){
+            clearInterval(times);
+            time = 0 ;
+        }
+        var h = Math.floor(time / 3600000)< 10 ? '0' + Math.floor(time / 3600000):Math.floor(time / 3600000);
+        var time = time - h * 3600000;
+        var m = Math.floor(time / 60000)< 10 ? '0' + Math.floor(time / 60000):Math.floor(time / 60000);
+        var time = time - m * 60000;
+        var s = Math.floor(time / 1000)< 10 ? '0' + Math.floor(time / 1000):Math.floor(time / 1000);
+
+        var str = `距离下课还有 ${h}小时${m}分钟${s}秒`;
+        oDiv = document.getElementById('div1');
+        oDiv.innerHTML = str;
+    }
+
+    var times = window.setInterval(obj, 1000)
+
+
+</script>

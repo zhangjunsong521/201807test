@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    var ary = [
+        {name:'xiaohong',age:18,hobby:'play'},
+        {name:'zhangsan',age:10,hobby:'sleep'},
+        {name:'lisi',age:14,hobby:'eat'}
+    ];
+
+//    根据age排序
+    var arr = ary.sort(function (a, b) {
+        return a.age - b.age;
+    });
+//    字母排序
+    var arr2 = ary.sort((a,b) => {
+        return a.hobby.localeCompare(b.hobby)
+    });
+//    汉字排序j
+    var arr3 = ary.sort((a,b) => {
+        return a.name.localeCompare(b.name,'zh')
+    });
+
+
+
+
+
+
+
+
+
+</script>

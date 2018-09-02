@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+//   从数组中随机删除N项    并把删除的N项  组成一个新的数组返回
+//    在数组的原型上添加
+
+    var ary = [1,2,3,4,5];
+    Array.prototype.removeRan = function (n) {
+        if(n >= this.length){
+            //this 是操作的数组
+            //当要删除的项超过数组的长度时  我们把数组中的所有项都删除
+            //返回一个 所有项组成的新数组；原有数组变成  空数组
+            let ary = this.splice(0);
+            return ary;
+        }
+        let ary = [];
+        for (var i = 0; i < n; i++) {
+            let m = Math.floor(Math.random()*this.length);
+            ary.push(this.splice(m,1)[0]);
+        }
+        return ary;
+    };
+    ary.removeRan(2)
+
+
+
+
+
+
+
+
+
+
+</script>

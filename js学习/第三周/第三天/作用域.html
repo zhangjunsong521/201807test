@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    形式1
+    (function () {
+        var a = 19 ;
+        return function () {
+            console.log(a);
+        }
+    })()
+
+    形式2
+    var fn = (function () {
+        var fn = function () {
+            console.log(12);
+        };
+        return {
+            f:fn
+        }
+    })()
+    形式3
+    var sum = function () {
+        var a = 12 ;
+        return function () {
+            console.log(a);
+        }
+    }
+
+</script>

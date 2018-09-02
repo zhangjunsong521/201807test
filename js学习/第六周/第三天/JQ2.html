@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+</body>
+</html>
+<script>
+
+//    var lis = document.getElementsByTagName('li');
+//    for (let i = 0; i < lis.length; i++) {
+//        lis[i].onclick =function () {
+//            alert(i+1)
+//        }
+//    }
+//    $('ul>li').on('click',function (index) {
+//        alert()
+//    });
+    $('ul>li').click(function () {
+        console.log($(this).index()+1);
+    })
+    /*
+    * $()  参数接受  css  选择器
+    *      参数接受  原生JS 对象
+    * */
+
+    var oDiv = document.getElementById('div1');
+    $(oDiv);//把原生对象  转成  JQ 对象
+    $('ul>li')[0];//原生对象
+    $($('ul>li')[0]);//JQ对象
+    $('ul>li').eq(0);//JQ对象
+
+
+
+
+
+
+
+
+</script>

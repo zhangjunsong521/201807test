@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+//    var str = 'qwertyu';
+//    console.log(str.charAt(5));
+//    str.charCodeAt(5);
+//    str.slice(3,4);
+//    str.split()
+//    str.substring()
+//    str.toUpperCase()
+//    str.toLocaleUpperCase()
+//    str.toLowerCase()
+//    str.toLocaleLowerCase()
+    var str = 'http://zhufengpeixun,.cn?w=12&q=eee&a=9999';
+    var queryUrl = function (str) {
+        var cur = str.split('?')[1];
+        var temp = cur.split('&');
+        var obj = {};
+        for (var i = 0; i < temp.length; i++) {
+            var ary = temp[i].split('=');
+            obj[ary[0]] = ary[1]
+        }
+        return obj ;
+    };
+console.log(queryUrl(str));
+
+</script>

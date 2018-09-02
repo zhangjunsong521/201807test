@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    function sum() {
+        var total = 0;
+        for (var i = 0; i < arguments.length; i++) {
+//            if (!isNaN(arguments[i])  &&  typeof arguments[i] == 'Number'){
+//                total += arguments[i];
+//            }
+            if (!isNaN(arguments[i])) {
+                total += Number(arguments[i]);
+            }
+        }
+        return total;
+    }
+
+
+    var oLis = document.getElementsByTagName('li');
+    var i = 0;
+    while (i < oLis.length) {
+        var n = i % 3;
+//        switch (n){
+//            case 0 :
+//                oLis[i].className = 'bcRed';
+//                break;
+//            case 1 :
+//                oLis[i].className = 'bcYell';
+//                break;
+//            default :
+//                oLis[i].className = 'bcBlue'
+//        }
+        switch (true) {
+            case n == 0 :
+                oLis[i].className = 'bcRed';
+                break;
+            case n == 1 :
+                oLis[i].className = 'bcYell';
+                break;
+            default :
+                oLis[i].className = 'bcBlue'
+        }
+        i++;
+    }
+
+
+    for (var i = 0; i < oLis.length; i++) {
+        if (i % 2) {
+            奇数
+        } else {
+
+        }
+        oLis[i].myIndex = i;
+        oLis[i].onclick = function () {
+            alert(`我是第${this.myIndex + 1}个li`)
+        }
+
+    }
+
+
+    function sum(n) {
+        var total = 0;
+        for (var i = 0; i < n; i++) {
+            if (i % 5 == 0 || i % 7 == 0) {
+                total += i;
+            }
+        }
+        return total;
+    }
+
+    function sum(m) {
+        if (i <= 0) {
+            return 0;
+        }
+        if (i % 5 == 0 || i % 7 == 0) {
+            return n + sum( n - 1 )
+        }
+        return sum( n - 1 );
+    }
+
+    var p = document.createElement('p');
+    p.innerHTML = '啊啊啊啊啊';
+    document.body.appendChild(p);
+
+
+
+    function sum(ary) {
+        var arr = ary.slice();
+        for (var i = 0; i < arr.length; i++) {
+            for (var n = i + 1 ; n < arr.length; n++) {
+                if (arr[i] == arr[n]){
+                    arr.splice(n,1);
+                    n -- ;
+                }
+            }
+        }
+        return arr ;
+    }
+
+
+    function removeRep(arr) {
+        var temp = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (temp.indexOf(arr[i]) == -1){
+                temp.push(arr[i]);
+            }
+        }
+        return temp ;
+    }
+
+
+    function sum(arr) {
+        var temp = {};
+        var ary = [];
+        for (var i = 0; i < arr.length; i++) {
+           temp[arr[i]] = arr[i];
+        }
+        for(var k in arr){
+            ary.push(temp[k])
+        }
+        return ary ;
+    }
+
+
+    function sum() {
+        var ary = '.......';
+        var str = '';
+        for (var i = 0; i < 4; i++) {
+            var sur = Math.round(Math.random()*61);
+            if(str.indexOf(ary[sur]) == -1){
+                str += ary[sur]
+            }else {
+                i -- ;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

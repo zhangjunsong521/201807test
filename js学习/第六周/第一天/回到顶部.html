@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="keywords">
+    <meta name="description" content="">
+    <title>张峻松</title>
+    <link rel="icon" href="">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            height: 5000px;
+            background: linear-gradient(#00deff,#3059fa,#ee2ad6);
+        }
+    </style>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+<div id="div1">哇哩哇哩</div>
+<a class="div1">回到顶部</a>
+</body>
+</html>
+<script>
+    var btn = utils.getByClass('div1')[0];
+    /*
+    * 固定步长
+    * */
+//    btn.onclick = function () {
+//        var timer = window.setInterval(function () {
+//            var tarT = utils.scrollT();
+//            tarT += 50;
+//            if(tarT <= 0){
+//                clearInterval(timer);
+//                tarT = 0;
+//            }
+//            document.documentElement.scrollTop = tarT;
+//            document.body.scrollTop = tarT;
+//        },20)
+//    }
+
+    var duration = 2000;
+    btn.onclick = function () {
+        var changT = utils.offset(btn).t - utils.clientH();
+        var speed = changT/duration;
+        var time = 0;
+        var timer = window.setInterval(function () {
+            time += 30;
+            var moveL = time*speed;
+            if(time >= duration){
+                clearInterval(timer);
+                moveL = changT
+            }
+            document.documentElement.scrollTop = changT - moveL;
+            document.body.scrollTop = changT - moveL;
+        },30)
+    }
+
+</script>
