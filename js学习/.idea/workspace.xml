@@ -47,11 +47,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/第八周/第四天/新浪/js/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="770">
-                  <caret line="162" column="2" lean-forward="true" selection-start-line="162" selection-start-column="2" selection-end-line="162" selection-end-column="2" />
+                <state relative-caret-position="590">
+                  <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
                   <folding>
                     <element signature="e#0#43#0" expanded="false" />
                     <element signature="n#!!block;n#bannerFn#0" expanded="false" />
@@ -61,24 +61,24 @@
                     <element signature="e#1651#1723#0" expanded="false" />
                     <element signature="e#1746#1765#0" expanded="false" />
                     <element signature="e#1788#1813#0" expanded="false" />
-                    <element signature="e#2276#2648#0" expanded="false" />
-                    <element signature="e#2679#3191#0" expanded="false" />
-                    <element signature="e#3222#3809#0" expanded="false" />
-                    <marker date="1535876161545" expanded="true" signature="1077:1262" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="1111:1240" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="2320:2622" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="2351:2613" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="2422:2598" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="2452:2579" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="2723:3165" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="2757:2823" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="2858:3152" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="2937:3133" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="2971:3110" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="3284:3783" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="3354:3556" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="3594:3770" ph="..." />
-                    <marker date="1535876161545" expanded="true" signature="3624:3751" ph="..." />
+                    <element signature="e#2275#2647#0" expanded="false" />
+                    <element signature="e#2678#3190#0" expanded="false" />
+                    <element signature="e#3221#3808#0" expanded="false" />
+                    <marker date="1535879442323" expanded="true" signature="1077:1262" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="1111:1240" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="2319:2621" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="2350:2612" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="2421:2597" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="2451:2578" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="2722:3164" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="2756:2822" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="2857:3151" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="2936:3132" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="2970:3109" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="3283:3782" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="3353:3555" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="3593:3769" ph="..." />
+                    <marker date="1535879442323" expanded="true" signature="3623:3750" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -94,66 +94,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="数据类型的比较.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/第三周/第一天/数据类型的比较.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="复习.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/第三周/第五天/复习.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="复习-案例.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/第三周/第五天/复习-案例.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1035">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="复习.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/第三周/第四天/复习.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="git.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/第三周/第一天/git.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-114">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="git.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/第三周/第三天/git.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-104">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -161,8 +101,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/第八周/第四天/新浪/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="258">
-                  <caret line="98" column="38" lean-forward="false" selection-start-line="98" selection-start-column="38" selection-end-line="98" selection-end-column="38" />
+                <state relative-caret-position="102">
+                  <caret line="81" column="8" lean-forward="true" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
                   <folding>
                     <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                     <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -306,96 +246,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js学习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js学习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js学习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="第三周" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="第四天" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js学习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js学习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="第三周" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="第五天" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js学习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js学习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="第三周" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="第二天" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js学习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js学习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="第三周" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="第三天" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js学习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js学习" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="第三周" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="第一天" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -572,12 +422,12 @@
       <workItem from="1535592736732" duration="32945000" />
       <workItem from="1535638725073" duration="26759000" />
       <workItem from="1535809181895" duration="505000" />
-      <workItem from="1535851759245" duration="18907000" />
+      <workItem from="1535851759245" duration="20165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="734149000" />
+    <option name="totallyTimeSpent" value="735407000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -589,7 +439,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1098" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.196875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -850,50 +700,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第八周/第四天/新浪/index.html">
+    <entry file="file://$PROJECT_DIR$/第三周/第四天/复习.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第八周/第四天/新浪/js/index.js">
+    <entry file="file://$PROJECT_DIR$/第三周/第三天/git.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="162" column="2" lean-forward="true" selection-start-line="162" selection-start-column="2" selection-end-line="162" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-            <element signature="n#!!block;n#bannerFn#0" expanded="false" />
-            <element signature="e#606#617#0" expanded="false" />
-            <element signature="n#!!block;n#giveHtml#0" expanded="false" />
-            <element signature="e#1411#1625#0" expanded="false" />
-            <element signature="e#1651#1723#0" expanded="false" />
-            <element signature="e#1746#1765#0" expanded="false" />
-            <element signature="e#1788#1813#0" expanded="false" />
-            <element signature="e#2276#2648#0" expanded="false" />
-            <element signature="e#2679#3191#0" expanded="false" />
-            <element signature="e#3222#3809#0" expanded="false" />
-            <marker date="1535876161545" expanded="true" signature="1077:1262" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="1111:1240" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="2320:2622" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="2351:2613" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="2422:2598" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="2452:2579" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="2723:3165" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="2757:2823" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="2858:3152" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="2937:3133" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="2971:3110" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="3284:3783" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="3354:3556" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="3594:3770" ph="..." />
-            <marker date="1535876161545" expanded="true" signature="3624:3751" ph="..." />
-          </folding>
+        <state relative-caret-position="-104">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第二周/第二周第五天/date.html">
+    <entry file="file://$PROJECT_DIR$/第三周/第一天/git.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第三周/第五天/复习-案例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1035">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第三周/第五天/复习.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -909,7 +748,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第三周/第五天/复习.html">
+    <entry file="file://$PROJECT_DIR$/第二周/第二周第五天/date.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -917,35 +756,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第三周/第五天/复习-案例.html">
+    <entry file="file://$PROJECT_DIR$/第八周/第四天/新浪/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1035">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="590">
+          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+            <element signature="n#!!block;n#bannerFn#0" expanded="false" />
+            <element signature="e#606#617#0" expanded="false" />
+            <element signature="n#!!block;n#giveHtml#0" expanded="false" />
+            <element signature="e#1411#1625#0" expanded="false" />
+            <element signature="e#1651#1723#0" expanded="false" />
+            <element signature="e#1746#1765#0" expanded="false" />
+            <element signature="e#1788#1813#0" expanded="false" />
+            <element signature="e#2275#2647#0" expanded="false" />
+            <element signature="e#2678#3190#0" expanded="false" />
+            <element signature="e#3221#3808#0" expanded="false" />
+            <marker date="1535879442323" expanded="true" signature="1077:1262" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="1111:1240" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="2319:2621" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="2350:2612" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="2421:2597" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="2451:2578" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="2722:3164" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="2756:2822" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="2857:3151" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="2936:3132" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="2970:3109" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="3283:3782" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="3353:3555" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="3593:3769" ph="..." />
+            <marker date="1535879442323" expanded="true" signature="3623:3750" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第三周/第四天/复习.html">
+    <entry file="file://$PROJECT_DIR$/第八周/第四天/新浪/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/第三周/第一天/git.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/第三周/第三天/git.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-104">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="102">
+          <caret line="81" column="8" lean-forward="true" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+          <folding>
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#header#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#0;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#1;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#2;n#section#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
